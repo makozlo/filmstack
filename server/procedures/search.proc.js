@@ -1,8 +1,8 @@
 const mdb = require('moviedb')(process.env.TMDB_API_KEY);
 
-exports.getMovieInfo = function(movie) {
+exports.search = function(query) {
 	return new Promise(function(fulfill, reject) {
-		mdb.searchMovie({ query: movie }, (err, res) => {
+		mdb.searchMulti({ query: query }, (err, res) => {
 			if(err) {
 				reject(err);
 			} else {
