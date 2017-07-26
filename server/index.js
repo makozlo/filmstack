@@ -3,6 +3,8 @@ var path = require("path");
 var bodyParser = require("body-parser");
 var api = require('./api');
 var cookieParser = require('cookie-parser');
+require("dotenv").load();
+
 var configurePassport = require('./config/passport');
 var userProc = require('./procedure/users.proc');
 var utils = require('./config/utils');
