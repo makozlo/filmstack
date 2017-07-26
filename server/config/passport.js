@@ -1,9 +1,10 @@
 var express = require('express');
 var passport = require('passport');
 var session = require('express-session');
-var MongoStore = require('connect-mongo')(session);
+var mySQLStore = require('express-mysql-session')(session);
 var localStrategy = require('passport-local').Strategy;
-var userProc = require('../procedure/users.proc');
+var userProc = require('../procedures/users.proc');
+var pool = require('./db').pool;
 var utils = require('./utils');
 
 function configurePassport(app) {
@@ -24,11 +25,11 @@ function configurePassport(app) {
                 }
             }, function(err){
             return done(err);
-        })
+        });
     },function(err){
             return done(err);
         });
-    }))
+    }));
     
 
     passport.serializeUser(function(user,done){
@@ -38,14 +39,14 @@ function configurePassport(app) {
         userProc.read(id).then(function(user){
             done(null,user);
         },function(err){
-            done(err)
-        })
+            done(err);
+        });
     });
 /*passport.deserializeUser(function(id, done){
             done(null,false)
         })*/
 
-    var sessionStore = new mySqlStore({
+    var sessionStore = new mySQLStore({
         createDatabaseTable: true
     }, pool);
 
@@ -54,7 +55,7 @@ function configurePassport(app) {
         store: sessionStore,
         resave: false,
         saveUninitialized: false
-    }))
+    }));
 
     app.use(passport.initialize());
     app.use(passport.session());

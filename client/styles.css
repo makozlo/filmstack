@@ -1,0 +1,16 @@
+.full-width {
+	margin-right: 0px !important;
+	margin-left: 0px !important;
+}
+
+.square-corners {
+	border-radius: 0px !important;
+}
+
+.no-padding {
+	padding: 0px !important;
+}
+
+.jumbotron {
+	height: 500px;
+}

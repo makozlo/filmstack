@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 require("dotenv").load();
 
 var configurePassport = require('./config/passport');
-var userProc = require('./procedure/users.proc');
+var userProc = require('./procedures/users.proc');
 var utils = require('./config/utils');
 const mdb = require('moviedb')(process.env.TMDB_API_KEY);
 

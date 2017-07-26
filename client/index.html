@@ -1,10 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<!-- <base href="/"> -->
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>{{ seo.title }}</title>
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+	<!-- angularJS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-route.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-resource.js"></script>
+	<script type="text/javascript" src="http://fgnass.github.io/spin.js/spin.min.js"></script>
+	<!-- fonts -->
+	
+	<!-- css -->
+	<link rel="stylesheet" href="styles.css">
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-	
+	<div ng-view></div>
+	<!-- views populate here -->
+
+
+	<!-- TEST AREA -->
+	<div class="container-fluid no-padding">
+		<div class="jumbotron full-width square-corners">
+			<h1>filmstack.</h1>
+			<h4>your watchlist, organized.</h4>
+			<input type="text"><button>search</button>
+		</div>
+		<div class="container">
+			<div class="row">
+			<div class="col-sm-4">
+				<h4>Your Watchlist, but Pretty</h4>
+				<p>Lorem ipsum dolor sit amet, ei vis agam recteque eloquentiam. No mei consul euismod. Ubique soluta ei eam, nibh accusam mei ex. Esse oratio ei sea, mel wisi exerci verterem eu. Eum et solet utinam inimicus. Elit atomorum eos ei, habeo brute etiam duo eu. Qui laoreet civibus voluptatibus ad, vim ex unum graeco delectus.</p>
+			</div>
+			<div class="col-sm-4">
+				<h4>Advanced Search</h4>
+				<p>Lorem ipsum dolor sit amet, ei vis agam recteque eloquentiam. No mei consul euismod. Ubique soluta ei eam, nibh accusam mei ex. Esse oratio ei sea, mel wisi exerci verterem eu. Eum et solet utinam inimicus. Elit atomorum eos ei, habeo brute etiam duo eu. Qui laoreet civibus voluptatibus ad, vim ex unum graeco delectus.</p>
+			</div>
+			<div class="col-sm-4">
+				<h4>Custom Lists</h4>
+				<p>Lorem ipsum dolor sit amet, ei vis agam recteque eloquentiam. No mei consul euismod. Ubique soluta ei eam, nibh accusam mei ex. Esse oratio ei sea, mel wisi exerci verterem eu. Eum et solet utinam inimicus. Elit atomorum eos ei, habeo brute etiam duo eu. Qui laoreet civibus voluptatibus ad, vim ex unum graeco delectus.</p>
+			</div>
+		</div>
+		</div>
+	</div>
+
+
+
+
+	<!-- TEST AREA -->
+
+
+
+	<!-- modules -->
+	<!-- <script type="text/javascript" src="./app.js"></script> -->
+	<!-- controllers -->
+	<!-- <script type="text/javascript" src="./controllers/SplashController.js"></script> -->
 </body>
 </html>
