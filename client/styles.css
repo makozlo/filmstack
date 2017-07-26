@@ -1,3 +1,7 @@
+body {
+	font-family: "Raleway", sans-serif;
+}
+
 .full-width {
 	margin-right: 0px !important;
 	margin-left: 0px !important;
@@ -13,4 +17,24 @@
 
 .jumbotron {
 	height: 500px;
+}
+
+.movie-banner {
+	background-color: #1d364a;
+	color: white;
+	height: 575px;
+}
+
+.movie-banner .movie-title {
+	display: inline;
+	font-size: 38px;
+}
+
+.movie-banner .movie-overview {
+	font-size: 18px;
+}
+
+.movie-banner .release-year {
+	display: inline;
+	font-size: 38px;
 }
