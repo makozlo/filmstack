@@ -5,8 +5,7 @@ var router = express.Router();
 
 router.route("/:id")
     .get(function(req, res) {
-        // return procedures.getMovieInfo(req.params.id).then(function(sucess) {
-        return procedures.getMovieInfo(315635).then(function(sucess) {
+        return procedures.getMovieInfo(req.params.id).then(function(success) {
             res.send(success);
             console.log(success);
         }, function(err) {

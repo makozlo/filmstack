@@ -1,4 +1,4 @@
-var app = angular.module('filmstack', ['filmstack.factories', 'filmstack.controllers', 'filmstack.services', 'ngRoute', 'ngResource']);
+var app = angular.module('filmstack', ['ngRoute', 'ngResource']);
 
 app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
     
@@ -8,12 +8,12 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
         templateUrl: 'views/splash.html',
         controller: 'SplashController'
     })
-    .when('/detail/:id', {
-        templateUrl: 'views/home.html',
-        controller: 'HomeController'
-    })
-    .when('/search', {
-        templateUrl: 'views/search.html',
-        controller: 'SearchController'
+    .when('/detail', {
+        templateUrl: 'views/detail.html',
+        controller: 'DetailController'
     });
+    // .when('/search', {
+    //     templateUrl: 'views/search.html',
+    //     controller: 'SearchController'
+    // });
 }]);
