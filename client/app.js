@@ -11,9 +11,9 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
     .when('/detail', {
         templateUrl: 'views/detail.html',
         controller: 'DetailController'
+    })
+    .when('/search-results', {
+        templateUrl: 'views/search.html',
+        controller: 'SearchController'
     });
-    // .when('/search', {
-    //     templateUrl: 'views/search.html',
-    //     controller: 'SearchController'
-    // });
 }]);
