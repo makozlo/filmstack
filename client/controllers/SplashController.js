@@ -8,10 +8,10 @@ app.controller('SplashController', ['$scope', '$http', 'SearchFactory', function
 		.then(function(data) {
 			console.log(data);
 		}, function() {
-			console.log('nope');
+			console.log('yay');
 		});
 
-
+console.log($scope.query);
 
 	};
 }]);

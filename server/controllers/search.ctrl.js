@@ -10,8 +10,9 @@ router.route("/")
     .post(function(req, res) {
     // return procedures.search("The Tree of Life").then(function(success) {
     return procedures.search(req.body.keyword).then(function(success) {
-        
+        console.log(req.body.keyword);
         res.send(success);
+        console.log(success);
     }, function(err) {
         console.log(err);
         res.status(500).send(err);
