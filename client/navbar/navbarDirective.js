@@ -1,11 +1,8 @@
-'use strict';
 
-angular.module('navbar')
-
-.directive('simpleNavbar', function (){
+app.directive('navbar', function (){
     return {
         restrict: 'E',
-        templateUrl: '',
+        templateUrl: './directives/navbar.html',
         controller: 'NavbarCtrl',
     };
 });
