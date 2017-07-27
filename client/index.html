@@ -23,6 +23,12 @@
 	<div ng-view></div>
 	<!-- views populate here -->
 
+	<!--Insert the Navbar -->
+	<simple-navbar></simple-navbar>
+	<section id="wraper" class="container" scroll-to>
+		<div class="view-slide-in" ng-view="main-app"></div>
+		</section>
+	
 	<!-- modules -->
 	<script type="text/javascript" src="./app.js"></script>
 	<!-- controllers -->
