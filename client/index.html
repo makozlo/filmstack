@@ -20,14 +20,16 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+	<simple-navbar></simple-navbar>
+	<section id="wraper" class="container" scroll-to>
+		<!-- <div class="view-slide-in" ng-view="main-app"></div> -->
+		<div class="view-slide-in"></div>
+		</section>
 	<div ng-view></div>
 	<!-- views populate here -->
 
 	<!--Insert the Navbar -->
-	<simple-navbar></simple-navbar>
-	<section id="wraper" class="container" scroll-to>
-		<div class="view-slide-in" ng-view="main-app"></div>
-		</section>
+	
 	
 	<!-- modules -->
 	<script type="text/javascript" src="./app.js"></script>
