@@ -7,9 +7,10 @@ var router = express.Router();
 
 
 router.route("/")
-    .get(function(req, res) {
+    .post(function(req, res) {
     // return procedures.search("The Tree of Life").then(function(success) {
-    return procedures.search(req.body.query).then(function(success) {
+    return procedures.search(req.body.keyword).then(function(success) {
+        
         res.send(success);
     }, function(err) {
         console.log(err);
