@@ -19,6 +19,12 @@ app.use(cookieParser());
 configurePassport(app);
 app.use("/api", api);
 
+
+
+
+
+
+
 app.get('/', function(req, res) {
     res.send(console.log('Hello World!'));
 });

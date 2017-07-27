@@ -1,19 +1,17 @@
 var express = require("express");
-//var passport = require('passport');
 var procedures = require('../procedures/search.proc');
-
-
 var router = express.Router();
 
-
 router.route("/")
-    .get(function(req, res) {
-    return procedures.search(req.body.query).then(function(success){
-        res.send(success);
-    }, function(err) {
-        console.log(err);
-        res.status(500).send(err);
+    .post(function (req, res) {
+        return procedures.search(req.body.keyword).then(function (success) {
+            console.log(req.body.keyword);
+            res.send(success);
+            console.log(success);
+        }, function (err) {
+            console.log(err);
+            res.status(500).send(err);
+        });
     });
-});
 
 module.exports = router;
