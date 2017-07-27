@@ -12,3 +12,7 @@ exports.search = function(query) {
 	});
 };
 
+// if this is put into index.js it successfully logs the results to the terminal
+// mdb.searchMulti({ query: 'dunkirk' }, (err, res) => {
+//     console.log(res);
+// });
