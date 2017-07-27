@@ -13,7 +13,7 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
         controller: 'DetailController'
     })
     .when('/search-results', {
-        templateUrl: 'views/search.html',
+        templateUrl: 'views/search-results.html',
         controller: 'SearchController'
     });
 }]);
