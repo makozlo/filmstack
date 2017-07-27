@@ -14,6 +14,6 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
     })
     .when('/search-results', {
         templateUrl: 'views/search.html',
-        controller: 'SearchController'
+        controller: 'SplashController'
     });
 }]);
