@@ -1,24 +1,35 @@
-<navbar></navbar>
 <div class="container-fluid no-padding">
 	<div class="jumbotron full-width square-corners">
-		<h1>filmstack.</h1>
-		<h4>your watchlist, organized.</h4>
-		<input type="text" ng-model="query"><button ng-click="search()">search</button>
+		<div class="logo">
+			<img src="./images/logos/filmstack-logo-large.png" alt="" height="300" class="center-block"><br><br>
+		</div>
+		<div class="col-md-6 col-md-push-3">
+            <div id="custom-search-input">
+                <div class="input-group col-md-12">
+                    <input type="text" class="form-control input-lg" placeholder="Find a movie" ng-model="query" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-info btn-lg" type="button" ng-click="search()">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
 	</div>
 	<div class="container">
 		<div class="row">
-		<div class="col-sm-4">
-			<h4>Your Watchlist, but Pretty</h4>
-			<p>Lorem ipsum dolor sit amet, ei vis agam recteque eloquentiam. No mei consul euismod. Ubique soluta ei eam, nibh accusam mei ex. Esse oratio ei sea, mel wisi exerci verterem eu. Eum et solet utinam inimicus. Elit atomorum eos ei, habeo brute etiam duo eu. Qui laoreet civibus voluptatibus ad, vim ex unum graeco delectus.</p>
+			<div class="col-sm-4">
+				<h4>Your Watchlist, Organized</h4>
+				<p>Lorem ipsum dolor sit amet, ei vis agam recteque eloquentiam. No mei consul euismod. Ubique soluta ei eam, nibh accusam mei ex. Esse oratio ei sea, mel wisi exerci verterem eu. Eum et solet utinam inimicus. Elit atomorum eos ei, habeo brute etiam duo eu. Qui laoreet civibus voluptatibus ad, vim ex unum graeco delectus.</p>
+			</div>
+			<div class="col-sm-4">
+				<h4>Advanced Search</h4>
+				<p>Lorem ipsum dolor sit amet, ei vis agam recteque eloquentiam. No mei consul euismod. Ubique soluta ei eam, nibh accusam mei ex. Esse oratio ei sea, mel wisi exerci verterem eu. Eum et solet utinam inimicus. Elit atomorum eos ei, habeo brute etiam duo eu. Qui laoreet civibus voluptatibus ad, vim ex unum graeco delectus.</p>
+			</div>
+			<div class="col-sm-4">
+				<h4>Custom Lists</h4>
+				<p>Lorem ipsum dolor sit amet, ei vis agam recteque eloquentiam. No mei consul euismod. Ubique soluta ei eam, nibh accusam mei ex. Esse oratio ei sea, mel wisi exerci verterem eu. Eum et solet utinam inimicus. Elit atomorum eos ei, habeo brute etiam duo eu. Qui laoreet civibus voluptatibus ad, vim ex unum graeco delectus.</p>
+			</div>
 		</div>
-		<div class="col-sm-4">
-			<h4>Advanced Search</h4>
-			<p>Lorem ipsum dolor sit amet, ei vis agam recteque eloquentiam. No mei consul euismod. Ubique soluta ei eam, nibh accusam mei ex. Esse oratio ei sea, mel wisi exerci verterem eu. Eum et solet utinam inimicus. Elit atomorum eos ei, habeo brute etiam duo eu. Qui laoreet civibus voluptatibus ad, vim ex unum graeco delectus.</p>
-		</div>
-		<div class="col-sm-4">
-			<h4>Custom Lists</h4>
-			<p>Lorem ipsum dolor sit amet, ei vis agam recteque eloquentiam. No mei consul euismod. Ubique soluta ei eam, nibh accusam mei ex. Esse oratio ei sea, mel wisi exerci verterem eu. Eum et solet utinam inimicus. Elit atomorum eos ei, habeo brute etiam duo eu. Qui laoreet civibus voluptatibus ad, vim ex unum graeco delectus.</p>
-		</div>
-	</div>
 	</div>
 </div>

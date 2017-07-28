@@ -2,6 +2,15 @@ body {
 	font-family: "Raleway", sans-serif;
 }
 
+.center {
+  display: block;
+  margin: auto;
+}
+
+.inline {
+  display: inline;
+}
+
 .full-width {
 	margin-right: 0px !important;
 	margin-left: 0px !important;
@@ -38,6 +47,12 @@ body {
 	display: inline;
 	font-size: 38px;
 }
+
+.dashboard-header {
+  background-color: #eeeeee;
+  height: 200px;
+}
+
 .search-form .form-group {
   float: right !important;
   transition: all 0.35s, border-radius 0s;
@@ -92,4 +107,48 @@ body {
 
 #search {
 	padding-top: 3px;
+}
+
+/**************** search results page *******************/
+
+.result-box {
+    -webkit-box-shadow: 0px 10px 22px 3px rgba(0,0,0,0.22);
+    -moz-box-shadow: 0px 10px 22px 3px rgba(0,0,0,0.22);
+    box-shadow: 0px 10px 22px 3px rgba(0,0,0,0.22);
+}
+
+#custom-search-input{
+    padding: 3px;
+    border: solid 1px #E4E4E4;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+#custom-search-input input{
+    border: 0;
+    box-shadow: none;
+}
+
+#custom-search-input button{
+    margin: 2px 0 0 0;
+    background: none;
+    box-shadow: none;
+    border: 0;
+    color: #666666;
+    padding: 0 8px 0 10px;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input button:hover{
+    border: 0;
+    box-shadow: none;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input .glyphicon-search{
+    font-size: 23px;
+}
+
+.logo {
+  height: 320px;
 }
