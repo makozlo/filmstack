@@ -4,8 +4,8 @@ app.controller('DashboardController', ['$scope', '$http', 'DashboardFactory', fu
 
 	data.$get(function(data) {
 		$scope.otherLists = data.otherLists;
-		// console.log($scope.lists);
-		// console.log($scope.lists.otherLists);
+		$scope.mainList = data.mainList;
+		
 	});
 
 }]);
