@@ -14,8 +14,7 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
     })
     .when('/search-results', {
         templateUrl: 'views/search-results.html',
-        // controller: 'SearchController'
-        controller: 'SplashController'
+        controller: 'SearchController'
     })
     .when('/dashboard', {
         templateUrl: 'views/dashboard.html',

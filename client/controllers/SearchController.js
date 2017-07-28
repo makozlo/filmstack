@@ -1,3 +1,6 @@
-app.controller('SearchController', ['$scope', '$http', 'SearchFactory', '$location', '$rootScope',function ($scope, $http, SearchFactory,$location,$rootScope) {
-    // console.log($rootScope.results);
+app.controller('SearchController', ['$scope', '$http', '$location', 'SearchFactory', 'SearchCacheService', function ($scope, $http, $location, SearchFactory, SearchCacheService) {
+	$scope.results = SearchCacheService.getResults();
+	var posterURL = "https://image.tmdb.org/t/p/w500";
+	console.log
+	$scope.poster = posterURL + $scope.results.poster_path;
 }]);

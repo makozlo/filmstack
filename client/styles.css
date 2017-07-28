@@ -24,6 +24,10 @@ body {
 	padding: 0px !important;
 }
 
+.no-margin {
+    margin: 0px;
+}
+
 .jumbotron {
 	height: 500px;
 }
@@ -46,6 +50,11 @@ body {
 .movie-banner .release-year {
 	display: inline;
 	font-size: 38px;
+}
+
+.movie-poster {
+    display: inline;
+    margin: 0px;
 }
 
 .dashboard-header {
@@ -112,9 +121,9 @@ body {
 /**************** search results page *******************/
 
 .result-box {
-    -webkit-box-shadow: 0px 10px 22px 3px rgba(0,0,0,0.22);
-    -moz-box-shadow: 0px 10px 22px 3px rgba(0,0,0,0.22);
-    box-shadow: 0px 10px 22px 3px rgba(0,0,0,0.22);
+    -webkit-box-shadow: 0px 3px 16px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 3px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 3px 16px 0px rgba(0,0,0,0.2);
 }
 
 #custom-search-input{

@@ -1,13 +1,25 @@
 <div class="container">
 	<h1>Search Results</h1>
-	<h1>{{ test }}</h1>
-	<h1>{{ firstResultTitle }}</h1>
-	<!-- <div class="row" ng-repeat="result in results"> -->
-	<div class="row">
+	<div class="row" ng-repeat="result in results">
 		<div class="result-box col-md-10 col-md-push-1">
-				<img class="inline" ng-src="" src="" alt="" height="275">
-				<h3 class="inline">{{ result.title }}</h3>
-				<h5 class="inline">{{ result.overview }}</h5>
+			<div>
+				<img ng-src="https://image.tmdb.org/t/p/w500{{ result.poster_path }}" src="" alt="" height="275">
+			</div>
+			<h3 class="inline">{{ result.title }}</h3>
+			<h5 class="inline">{{ result.overview }}</h5>
 		</div>
 	</div>
 </div>
+
+<!-- <div class="container">
+	<h1>Search Results</h1>
+	<div class="row">
+		<div class="result-box col-md-10 col-md-push-1">
+			<div class="no-margin">
+				<img src="https://image.tmdb.org/t/p/w500/dEYnvnUfXrqvqeRSqvIEtmzhoA8.jpg" height="275">
+			</div>
+			<h3 class="inline">The Dark Knight Rises</h3>
+			<h5 class="inline">Following the death of District Attorney Harvey Dent, Batman assumes responsibility for Dent's crimes to protect the late attorney's reputation and is subsequently hunted by the Gotham City Police Department. Eight years later, Batman encounters the mysterious Selina Kyle and the villainous Bane, a new terrorist leader who overwhelms Gotham's finest. The Dark Knight resurfaces to protect a city that has branded him an enemy.</h5>
+		</div>
+	</div>
+</div> -->
