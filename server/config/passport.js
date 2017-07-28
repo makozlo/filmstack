@@ -9,10 +9,10 @@ var utils = require('./utils');
 
 function configurePassport(app) {
     passport.use (new localStrategy({
-        usernameField: 'email',
+        usernameField: 'username',
         passwordField: 'password'
-    }, function(email, password, done){
-        userProc.readByEmail(email).then(function(user){
+    }, function(username, password, done){
+        userProc.readByUserName(username).then(function(user){
             if(!user){
                 return done(null,false);
             }
@@ -21,7 +21,7 @@ function configurePassport(app) {
                 if(matches){
                     return done(null, user);
                 } else{
-                    return done(null, false, {message: 'try again pimp!'});
+                    return done(null, false, {message: 'Wrong password, please try again'});
                 }
             }, function(err){
             return done(err);
