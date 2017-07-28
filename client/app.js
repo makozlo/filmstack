@@ -13,7 +13,12 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
         controller: 'DetailController'
     })
     .when('/search-results', {
-        templateUrl: 'views/search.html',
+        templateUrl: 'views/search-results.html',
+        // controller: 'SearchController'
         controller: 'SplashController'
+    })
+    .when('/dashboard', {
+        templateUrl: 'views/dashboard.html',
+        controller: 'DashboardController'
     });
 }]);
