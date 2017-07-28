@@ -21,9 +21,9 @@
 		<div class="col-sm-9">
 			<h4><small>WATCHLIST</small></h4>
 			<hr>
-			<div class="inline" ng-repeat="movie in mainList">
-				<img ng-src="https://image.tmdb.org/t/p/w500{{ movie.poster }}" alt="" height="300">
-			</div>
+			  <div class="inline postercontainer" ng-repeat="movie in mainList">
+				<img class="poster" ng-src="https://image.tmdb.org/t/p/w500{{ movie.poster }}" alt="" height="200" width="132">
+			</div>  
 		</div>
 	</div>
 </div>

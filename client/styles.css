@@ -11,6 +11,11 @@ body {
   display: inline;
 }
 
+.postercontainer {
+  background-size: contain;
+  width: 132px;
+}
+
 .full-width {
 	margin-right: 0px !important;
 	margin-left: 0px !important;
@@ -55,6 +60,11 @@ body {
 .movie-poster {
     display: inline;
     margin: 0px;
+}
+  
+.poster {
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
 }
 
 .dashboard-header {
@@ -112,8 +122,7 @@ body {
   color: #3596e0;
   left: initial;
   font-size: 14px;
-<<<<<<< HEAD
-=======
+
 }
 
 #search {
