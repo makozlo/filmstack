@@ -112,6 +112,8 @@ body {
   color: #3596e0;
   left: initial;
   font-size: 14px;
+<<<<<<< HEAD
+=======
 }
 
 #search {
@@ -160,4 +162,5 @@ body {
 
 .logo {
   height: 320px;
+>>>>>>> 8932b36c97a6a2eefa2e17b34830332507a93070
 }

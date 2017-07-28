@@ -8,12 +8,12 @@ exports.read = function(id){
     return db.row('getSingleUser', [id]);
 };
 
-exports.readByEmail = function(email){
-    return db.row('getUserByEmail', [email]);
+exports.readByUserName = function(username){
+    return db.row('get_user_by_username', [username]);
 };
 
-exports.write = function(first, last, email, password){
-    return db.row('createUser', [first, last, email, password]);
+exports.write = function(username, email, password){
+    return db.row('create_new_user', [username, email, password]);
 };
 
 exports.updatePassword = function(id, hash){

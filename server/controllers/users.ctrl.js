@@ -8,7 +8,7 @@ var router = express.Router();
 
 router.post('/login', function(req, res, next){
     passport.authenticate('local', function(err, user, info){
-        console.log(req.body.email + " ? " + req.body.password);
+        console.log(req.body.username + " ? " + req.body.password);
         if(err){
             console.log(err);
             return res.sendStatus(500);
@@ -47,7 +47,7 @@ router.route("/")
 })
 .post(function(req, res){
     utils.encryptPassword(req.body.password).then(function(hash) {
-        procedures.write(req.body.firstname,req.body.lastname, req.body.email, hash)
+        procedures.write(req.body.username, req.body.email, hash)
     .then(function(id){
         res.send(id);
     }, function(err){
