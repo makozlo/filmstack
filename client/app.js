@@ -8,7 +8,7 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
         templateUrl: 'views/splash.html',
         controller: 'SplashController'
     })
-    .when('/detail', {
+    .when('/detail/:id', {
         templateUrl: 'views/detail.html',
         controller: 'DetailController'
     })
