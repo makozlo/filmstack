@@ -16,7 +16,7 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
         templateUrl: 'views/search-results.html',
         controller: 'SearchController'
     })
-    .when('/dashboard', {
+    .when('/dashboard/:id', {
         templateUrl: 'views/dashboard.html',
         controller: 'DashboardController'
     })
