@@ -12,8 +12,28 @@ app.controller('SplashController', ['$scope', '$resource', '$http', 'SearchFacto
 			$location.path('/search-results');
 		});
 
-		$scope.createUser = function () {
-			var user = new UserFactory({
+		
+		// $scope.results = SearchFactory.save({query: $scope.query});
+		// console.log($scope.results);
+		// $http.post('http://localhost:3000/api/search', { keyword: $scope.query })
+		// 	.then(function (data) {
+		// 		$scope.results = data.data.results[0];
+
+		// 		$scope.firstResultTitle = data.data.results[0].title;
+		// 		console.log($scope.results);
+		// 		console.log($scope.firstResultTitle);
+		// 		console.log(data.data);
+		// 	}, function () {
+		// 		console.log('nope');
+		// 	});
+		// .then(function(data) {
+		// 	$location.path('/search-results');
+		// });
+
+	};
+
+	$scope.createUser = function () {
+			var user = new User({
 				username: $scope.username,
 				email: $scope.email,
 				password: $scope.password
