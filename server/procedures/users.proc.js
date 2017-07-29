@@ -5,7 +5,7 @@ exports.all = function() {
 };
 
 exports.read = function(id){
-    return db.row('getSingleUser', [id]);
+    return db.row('get_user_by_username', [id]);
 };
 
 exports.readByUserName = function(username){

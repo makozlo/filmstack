@@ -4,9 +4,9 @@ const saltRounds = 12;
 /*
 Take a plain-text password and encrypt it 
 */
-exports.encryptPassword = function (pw) {
+exports.encryptPassword = function (password) {
     return new Promise(function(resolve, reject){
-        bcrypt.hash(pw, saltRounds, function(err, hash){
+        bcrypt.hash(password, saltRounds, function(err, hash){
             if(err){
                 reject(err);
             } else{
@@ -16,9 +16,9 @@ exports.encryptPassword = function (pw) {
     })
 }
 
-exports.checkPassword = function(pw, hash){
+exports.checkPassword = function(password, hash){
     return new Promise(function(resolve, reject){
-        bcrypt.compare(pw, hash, function(err, matches){
+        bcrypt.compare(password, hash, function(err, matches){
             if(err){
                 reject(err)
             }else{

@@ -1,4 +1,4 @@
-app.controller('LoginController',['$scope', '$location', 'UserService', 'User', function($scope,$location,UserService,User){
+app.controller('LoginController',['$scope', '$location', 'UserService', 'User', '$routeParams', function($scope,$location,UserService,User, $routeParams){
     UserService.me().then(function(){
         redirect();
     })
@@ -13,7 +13,7 @@ app.controller('LoginController',['$scope', '$location', 'UserService', 'User', 
 
         function redirect() {
             var dest = $location.search().p;
-            if (!dest) { dest = '/dashboard' };
+            if (!dest) { dest = '/dashboard/' + $routeParams.id};
             $location.path(dest).search('p', null).replace();
         }
 }])

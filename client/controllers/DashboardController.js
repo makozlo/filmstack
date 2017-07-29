@@ -1,4 +1,4 @@
-app.controller('DashboardController', ['$scope', '$http', 'DashboardFactory','UserService', '$routeParams', function ($scope, $http, DashboardFactory,  UserService, $routeParams) {
+app.controller('DashboardController', ['$scope', '$http', 'DashboardFactory','UserService', '$routeParams','User', function ($scope, $http, DashboardFactory,  UserService, $routeParams, User) {
 	UserService.requireLogin();
 	$scope.user = User.get({ id: $routeParams.id });
 	console.log($scope.user);
