@@ -5,14 +5,15 @@ app.controller('DashboardController', ['$scope', '$http', 'DashboardFactory','Us
 	// get info for user
 	var user = new UserFactory({id: $routeParams.id});
 	user.$get(function(data) {
-		console.log(data.id);
 		$scope.user = data;
+		console.log($scope.user);
 
 		// get lists from the database, using the current user
 		var dashInfo = new DashboardFactory({id: $scope.user.id});
 		dashInfo.$get(function(data) {
 			$scope.otherLists = data.otherLists;
 			$scope.mainList = data.mainList;
+			console.log($scope.mainList);
 		});
 	});
 }]);

@@ -4,8 +4,12 @@ exports.all = function() {
     return db.rows("getUsers", []);
 };
 
+// exports.read = function(id){
+//     return db.row('get_user_by_username', [id]);
+// };
+
 exports.read = function(id){
-    return db.row('get_user_by_username', [id]);
+    return db.row('get_user_by_id', [id]);
 };
 
 exports.readByUserName = function(username){
