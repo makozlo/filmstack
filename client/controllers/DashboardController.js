@@ -13,7 +13,6 @@ app.controller('DashboardController', ['$scope', '$http', 'DashboardFactory','Us
 		dashInfo.$get(function(data) {
 			$scope.otherLists = data.otherLists;
 			$scope.mainList = data.mainList;
-			console.log($scope.mainList);
 		});
 	});
 }]);
