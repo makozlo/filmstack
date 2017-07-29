@@ -78,8 +78,9 @@ router.route("/")
     })
     .post(function(req, res){
         utils.encryptPassword(req.body.password).then(function(hash) {
-            procedures.write(req.body.username, req.body.password, hash)
+            procedures.write(req.body.username, req.body.email, hash)
             .then(function(id){
+                console.log(id.id);
                 res.send(id);
             }, function(err){
                 console.log(err);

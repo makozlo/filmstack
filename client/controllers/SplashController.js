@@ -1,4 +1,4 @@
-app.controller('SplashController', ['$scope', '$resource', '$http', 'SearchFactory', 'SearchCacheService', '$location', 'UserService', 'User', '$routeParams', function ($scope, $resource, $http, SearchFactory, SearchCacheService, $location, UserService, User, $routeParams) {
+app.controller('SplashController', ['$scope', '$resource', '$http', 'SearchFactory', 'SearchCacheService', '$location', 'UserService', 'UserFactory', '$routeParams', function ($scope, $resource, $http, SearchFactory, SearchCacheService, $location, UserService, UserFactory, $routeParams) {
 
 
 	$scope.search = function () {
@@ -12,6 +12,7 @@ app.controller('SplashController', ['$scope', '$resource', '$http', 'SearchFacto
 			$location.path('/search-results');
 		});
 
+<<<<<<< HEAD
 		
 		// $scope.results = SearchFactory.save({query: $scope.query});
 		// console.log($scope.results);
@@ -34,7 +35,12 @@ app.controller('SplashController', ['$scope', '$resource', '$http', 'SearchFacto
 
 	$scope.createUser = function () {
 			var user = new User({
+=======
+		$scope.createUser = function () {
+			var user = new UserFactory({
+>>>>>>> 996d22bf739eb6ae9aaee573e25e95af4200538d
 				username: $scope.username,
+				email: $scope.email,
 				password: $scope.password
 			}).$save(function () {
 				window.location.replace('http://localhost:3000/dashboard/' + $routeParams.id);
