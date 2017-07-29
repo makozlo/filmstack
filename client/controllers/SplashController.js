@@ -33,12 +33,12 @@ app.controller('SplashController', ['$scope', '$resource', '$http', 'SearchFacto
 	};
 
 	$scope.createUser = function () {
-			var user = new User({
+			var user = new UserFactory({
 				username: $scope.username,
 				email: $scope.email,
 				password: $scope.password
-			}).$save(function () {
-				window.location.replace('http://localhost:3000/dashboard/' + $routeParams.id);
+			}).$save(function (data) {
+				window.location.replace('http://localhost:3000/dashboard/' + data.userid);
 			})
 		}
 
