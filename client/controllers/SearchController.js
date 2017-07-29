@@ -5,4 +5,5 @@ app.controller('SearchController', ['$scope', '$http', '$location', 'SearchFacto
 		var path = '/detail/' + id;
 		$location.path(path);
 	};
+
 }]);

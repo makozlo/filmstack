@@ -1,6 +1,10 @@
 <div class="container-fluid no-padding">
 	<div class="jumbotron full-width square-corners">
-		<div><span class="glyphicon glyphicon-user"></span><p>Sign Up/Login</p></div>
+		<div>
+			<!-- Trigger the modal with a button -->
+			<button type="button" class="glyphicon glyphicon-user" "btn btn-info btn-lg" data-toggle="modal" data-target="#loginModel">Log-in</button>
+			<button type="button" class="glyphicon glyphicon-user" "btn btn-info btn-lg" data-toggle="modal" data-target="#signupModel">Sign-Up</button>
+		</div>
 		<div class="logo">
 			<img src="./images/logos/filmstack-logo-large.png" alt="" height="300" class="center-block"><br><br>
 		</div>
@@ -42,6 +46,54 @@
 			<h5 class="inline">{{ result.overview }}</h5>
 		</div>
 	</div>
+
+<!-- Log-InModal -->
+<div id="loginModel" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Log-in</h4>
+      </div>
+      <div class="modal-body">
+        <input type="text" ng-model="username" placeholder="Username">
+		<input type="text" ng-model="password" placeholder="Password">
+		<button ng-click="login()">Login</button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!--Sign-Up Modal -->
+<div id="signupModel" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Sign-Up</h4>
+      </div>
+      <div class="modal-body">
+       <input type="text" ng-model="username" placeholder="Username">
+		<input type="email" ng-model="email" placeholder="Email">
+		<input type="text" ng-model="password" placeholder="Password">
+		<button ng-click="createUser()">Create User</button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 
 	
 </div>
