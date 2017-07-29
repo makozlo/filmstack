@@ -80,7 +80,7 @@ router.route("/")
         utils.encryptPassword(req.body.password).then(function(hash) {
             procedures.write(req.body.username, req.body.email, hash)
             .then(function(id){
-                console.log(id.id);
+                console.log(id.userid);
                 res.send(id);
             }, function(err){
                 console.log(err);

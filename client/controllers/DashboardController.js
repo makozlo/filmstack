@@ -1,5 +1,5 @@
 app.controller('DashboardController', ['$scope', '$http', 'DashboardFactory','UserService', '$routeParams','UserFactory', function ($scope, $http, DashboardFactory,  UserService, $routeParams, UserFactory) {
-
+//remove below to test for protected routes
 	// UserService.requireLogin();
 
 	// get info for user
