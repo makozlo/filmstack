@@ -57,8 +57,8 @@
 				</div>
 				<div class="modal-body">
 					<input type="text" ng-model="username" placeholder="Username">
-					<input type="text" ng-model="password" placeholder="Password">
-					<button ng-click="login()">Login</button>
+					<input type="password" ng-model="password" placeholder="Password">
+					<button data-dismiss="modal" ng-click="login()">Login</button>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -80,7 +80,7 @@
 					<input type="text" ng-model="username" placeholder="Username">
 					<input type="email" ng-model="email" placeholder="Email">
 					<input type="password" ng-model="password" placeholder="Password">
-					<button ng-click="createUser()">Create User</button>
+					<button data-dismiss="modal" ng-click="createUser()">Create User</button>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

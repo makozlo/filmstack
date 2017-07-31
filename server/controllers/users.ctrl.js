@@ -37,8 +37,9 @@ router.get('/logout', function(req, res){
 
 router.route('/:id')
     .get(function(req, res) {
-        procedures.read(req.params.id).then(function(data) {
+        procedures.read(req.user.id).then(function(data) {
             res.send(data);
+            // console.log(data);
         }, function(err) {
             console.log(err);
             res.sendStatus(500);
@@ -80,7 +81,6 @@ router.route("/")
         utils.encryptPassword(req.body.password).then(function(hash) {
             procedures.write(req.body.username, req.body.email, hash)
             .then(function(id){
-                console.log(id.userid);
                 res.send(id);
             }, function(err){
                 console.log(err);
@@ -90,7 +90,7 @@ router.route("/")
     });
 
 router.get('/me', authMw.isLoggedIn, function(req,res){
-    res.send(req.user);
+    res.send(req.user.id);
 });
 
 /*

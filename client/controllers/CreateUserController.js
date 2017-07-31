@@ -6,7 +6,7 @@ app.controller('CreateUserController', ['$scope', 'User', 'UserService', '$locat
                     email: $scope.email,
                     password: $scope.password
                 }).$save(function () {
-                    window.location.replace('http://localhost:3000/dashboard/' + $routeParams.id);
+                    window.location.replace('http://localhost:3000/dashboard');
                 })
             }
 }]) 

@@ -16,16 +16,8 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
         templateUrl: 'views/search-results.html',
         controller: 'SearchController'
     })
-    .when('/dashboard/:id', {
+    .when('/dashboard', {
         templateUrl: 'views/dashboard.html',
         controller: 'DashboardController'
     })
-    .when('/login', {
-        templateUrl: 'views/login.html',
-        controller: 'LoginController'
-    })
-    .when('/signup', {
-        templateUrl: 'views/signUp.html',
-        controller: 'CreateUserController'
-    });
 }]);
