@@ -209,3 +209,29 @@ body {
   opacity: 0.8;
 }
 
+/**** detail page ***/
+
+
+.detail-page .info {
+  background-color: #f1f1f1;  
+}
+
+.movie-banner-pad {
+  margin-top: 40px;
+}
+
+.personCard {
+  width: 200px !important;
+  height: 300px !important;
+  display: inline;
+}
+
+.personCard h4 {
+  width: 100px;
+  margin-right: 0px !important;
+}
+
+.personCard p {
+  width: 100px;
+  margin-right: 0px !important;
+}

@@ -1,4 +1,4 @@
-app.controller('SplashController', ['$scope', '$resource', '$http', 'SearchFactory', 'SearchCacheService', '$location', 'UserService', 'UserFactory', '$routeParams', function ($scope, $resource, $http, SearchFactory, SearchCacheService, $location, UserService, UserFactory, $routeParams) {
+app.controller('SplashController', ['$scope', '$resource', '$http', 'SearchFactory', 'SearchCacheService', '$location', 'UserService', 'UserFactory', 'CastCrewFactory', '$routeParams', function ($scope, $resource, $http, SearchFactory, SearchCacheService, $location, UserService, UserFactory, CastCrewFactory, $routeParams) {
 
 
 	$scope.search = function () {

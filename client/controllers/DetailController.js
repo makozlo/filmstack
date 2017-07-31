@@ -1,4 +1,4 @@
-app.controller('DetailController', ['$scope', '$http', 'DetailFactory', function ($scope, $http, DetailFactory) {
+app.controller('DetailController', ['$scope', '$http', 'DetailFactory', 'CastCrewFactory', function ($scope, $http, DetailFactory, CastCrewFactory) {
 	
 	function getMovieID() {
 		array = location.pathname.split('/');
@@ -8,11 +8,9 @@ app.controller('DetailController', ['$scope', '$http', 'DetailFactory', function
 
 	var movieDbID = getMovieID();
 
-
 	$scope.movie = DetailFactory.get({ id: movieDbID });
 
-	$scope.poster = 'https://image.tmdb.org/t/p/w500' + $scope.movie.poster_path;
+	$scope.castCrew = CastCrewFactory.get({ id: movieDbID });
 
-	console.log($scope.movie);
-	console.log($scope.movie.poster_path);
+	$scope.poster = 'https://image.tmdb.org/t/p/w500' + $scope.movie.poster_path;
 }]);
