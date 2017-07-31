@@ -48,8 +48,9 @@ app.controller('SplashController', ['$scope', '$resource', '$http', 'SearchFacto
 
 	$scope.login = function () {
 
-		UserService.me().then(function () {
-			redirect();
+		UserService.me().then(function (data) {
+			console.log(data);
+			// redirect();
 		});
 
 		UserService.login($scope.username, $scope.password).then(function () {

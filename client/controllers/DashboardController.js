@@ -1,12 +1,16 @@
 app.controller('DashboardController', ['$scope', '$http', 'DashboardFactory','UserService', '$routeParams','UserFactory', function ($scope, $http, DashboardFactory,  UserService, $routeParams, UserFactory) {
-//remove below to test for protected routes
+	//remove below to test for protected routes
 	// UserService.requireLogin();
 	UserService.me().then(function(user){
 		console.log("Got that");
-		console.log(user);
 		$scope.user = user;
-	})
-	// get info for user
+	});
+}]);
+
+
+// old code
+
+// get info for user
 	// var user = new UserFactory({id: });
 	// user.$get(function(data) {
 	// 	$scope.user = data;
@@ -19,4 +23,3 @@ app.controller('DashboardController', ['$scope', '$http', 'DashboardFactory','Us
 	// 		$scope.mainList = data.mainList;
 	// 	});
 	// });
-}]);
