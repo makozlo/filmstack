@@ -2,7 +2,7 @@
 	<div class="jumbotron full-width square-corners">
 		<div>
 			<!-- Trigger the modal with a button -->
-			<button type="button" class="glyphicon glyphicon-user" "btn btn-info btn-lg" data-toggle="modal" data-target="#loginModel">Log-in</button>
+			<button type="button" class="glyphicon glyphicon-user" "btn btn-info btn-lg" data-toggle="modal" data-target="#loginModal">Log-in</button>
 			<button type="button" class="glyphicon glyphicon-user" "btn btn-info btn-lg" data-toggle="modal" data-target="#signupModel">Sign-Up</button>
 		</div>
 	<div class="logo">
@@ -47,10 +47,10 @@
   	</div>
 
   <!-- Log-InModal -->
-	<div id="loginModel" class="modal fade" role="dialog">
-		<div class="modal-dialog">
+	<!-- <div id="loginModel" class="modal fade" role="dialog"> -->
+		<!-- <div class="modal-dialog"> -->
 		<!-- Modal content-->
-			<div class="modal-content">
+			<!-- <div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 					<h4 class="modal-title">Log-in</h4>
@@ -62,6 +62,25 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="close" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div> -->
+
+	<!-- new login modal -->
+	<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+	<!-- <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"> -->
+	    <div class="modal-dialog">
+			<div class="loginmodal-container">
+				<h1>Login to Your Account</h1><br>
+				<form>
+					<input type="text" name="user" placeholder="Username">
+					<input type="password" name="pass" placeholder="Password">
+					<!-- <input type="submit" name="login" class="login loginmodal-submit" value="Login" ng-click="login()"> -->
+					<button data-dismiss="modal" class="btn btn-primary" ng-click="login()">Login</button>
+				</form>
+				<div class="login-help">
+					<a href="#">Sign Up</a>
 				</div>
 			</div>
 		</div>

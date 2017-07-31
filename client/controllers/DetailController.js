@@ -9,6 +9,7 @@ app.controller('DetailController', ['$scope', '$http', 'DetailFactory', 'CastCre
 	var movieDbID = getMovieID();
 
 	$scope.movie = DetailFactory.get({ id: movieDbID });
+	console.log($scope.movie);
 
 	$scope.castCrew = CastCrewFactory.get({ id: movieDbID });
 
