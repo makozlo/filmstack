@@ -38,6 +38,7 @@ router.get('/logout', function(req, res){
 router.route('/:id')
     .get(function(req, res) {
         procedures.read(req.user.id).then(function(data) {
+        // procedures.read().then(function(data) {
             res.send(data);
             // console.log(data);
         }, function(err) {
