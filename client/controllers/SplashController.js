@@ -12,7 +12,7 @@ app.controller('SplashController', ['$scope', '$resource', '$http', 'SearchFacto
 			$location.path('/search-results');
 		});
 
-		
+
 		// $scope.results = SearchFactory.save({query: $scope.query});
 		// console.log($scope.results);
 		// $http.post('http://localhost:3000/api/search', { keyword: $scope.query })
@@ -33,35 +33,35 @@ app.controller('SplashController', ['$scope', '$resource', '$http', 'SearchFacto
 	};
 
 	$scope.createUser = function () {
-			var user = new UserFactory({
-				username: $scope.username,
-				email: $scope.email,
-				password: $scope.password
-			}).$save(function (data) {
-				window.location.replace('http://localhost:3000/dashboard/' + data.userid);
-			})
+		var user = new UserFactory({
+			username: $scope.username,
+			email: $scope.email,
+			password: $scope.password
+		}).$save(function (data) {
+			window.location.replace('http://localhost:3000/dashboard/' + data.userid);
+		})
+	}
+
+	$scope.login = function () {
+
+		UserService.me().then(function () {
+			redirect();
+		});
+
+		UserService.login($scope.username, $scope.password).then(function () {
+			redirect();
+		}, function (err) {
+			console.log(err);
+		});
+	};
+
+	function redirect() {
+		var dest = $location.search().p;
+		if (!dest) {
+			dest = '/dashboard/' + $routeParams.id;
 		}
-
-		$scope.login = function () {
-
-			UserService.me().then(function () {
-				redirect();
-			});
-
-			UserService.login($scope.username, $scope.password).then(function () {
-				redirect();
-			}, function (err) {
-				console.log(err);
-			});
-		};
-
-		function redirect() {
-			var dest = $location.search().p;
-			if (!dest) {
-				dest = '/dashboard/' + $routeParams.id;
-			}
-			$location.path(dest).search('p', null).replace();
-		}
+		$location.path(dest).search('p', null).replace();
+	}
 }]);
 
 
