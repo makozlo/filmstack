@@ -1,37 +1,43 @@
 <div class="detail-page">
 	<div class="container full-width square-corners">
 		<div class="row movie-banner">
+		<div class="background-image">
+			<!-- <img src="https://image.tmdb.org/t/p/original/tZjVVIYXACV4IIIhXeIM59ytqwS.jpg" alt=""> -->
+			<img ng-src="https://image.tmdb.org/t/p/original{{ movie.backdrop_path }}" style="max-width: 100%">
+		</div>
 		<div class="row movie-banner-pad"></div>
 			<div class="col-md-4 movie-poster" align="center">
-				<img ng-src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}" alt="" height="450">
+				<img class="rounded-borders" ng-src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}" alt="" height="450">
 			</div>
 			<div class="col-md-8">
 				<div class="row">
 					<div>
 						<div class="col-lg-12">
-							<h1 class="movie-title">{{ movie.title }}</h1></div><br>
+							<h1 class="movie-title">{{ movie.title }}</h1><br>
 							<p class="release-year">{{ movie.release_date | date : "yyyy" }}</p>
 							<h3>Overview</h3>
 							<p class="movie-overview">{{ movie.overview }}</p>
 							<h3></h3>
 						</div>
-						<div class="col-lg-12">
-							<h3>Featured Credits</h3>
-						</div>
-						<div class="col-xs-4">
-							<h4>Director</h4>
-							<h5 ng-repeat="person in castCrew.crew | filter: { job : 'Director' } : true ">{{ person.name }}</h5>
-						</div>
-						<div class="col-xs-4">
-							<h4>Writer</h4>
-							<h5 ng-repeat="person in castCrew.crew | filter: {job : 'Screenplay'}">{{ person.name }}</h5>
-						</div>
-						<div class="col-xs-4">
-							<h4>Producers</h4>
-							<h5 ng-repeat="person in castCrew.crew | filter: { job : 'Executive Producer' } : true ">{{ person.name }}</h5>
-						</div>
+					</div>
+					<div class="col-xs-12">
+						<h3>Featured Credits</h3>
+					</div>
+					<div class="col-xs-4">
+						<h4>Director</h4>
+						<h5 ng-repeat="person in castCrew.crew | filter: { job : 'Director' } : true ">{{ person.name }}</h5>
+					</div>
+					<div class="col-xs-4">
+						<h4>Writer</h4>
+						<h5 ng-repeat="person in castCrew.crew | filter: {job : 'Screenplay'}">{{ person.name }}</h5>
+					</div>
+					<div class="col-xs-4">
+						<h4>Producers</h4>
+						<h5 ng-repeat="person in castCrew.crew | filter: { job : 'Executive Producer' } : true ">{{ person.name }}</h5>
 					</div>
 				</div>
+			</div>
+			<div class="row">
 				<div class="btn-group">
   					<button type="button" class="btn btn-primary" ng-click="addToList(movie.id, movie.title, movie.poster_path)">Add to Watchlist</button>
   					<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -46,15 +52,14 @@
    						<li><a href="#">Separated link</a></li>
   					</ul>
 				</div>
-				<div class="row">
-				</div>
+			</div>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row page-bottom">
 			<div class="col-sm-9 inline">
 				<h3>Featured Cast</h3>
 				<div class="personCard shadow-box" ng-repeat="person in castCrew.cast | limitTo: 10">
-					<!-- <img ng-src="https://image.tmdb.org/t/p/w185{{ person.profile_path }}" alt="" height="225"> -->
+					<img ng-src="https://image.tmdb.org/t/p/w185{{ person.profile_path }}" alt="" height="225">
 					<!-- <div ng-style="{'background-image': 'url(https://image.tmdb.org/t/p/w185{{ person.profile_path }})'
 					}"></div> -->
 					<h4>{{ person.name }}</h4>
@@ -64,7 +69,7 @@
 			<div class="info col-sm-3">
 				<h3>More Info</h3>
 				<h4>Runtime</h4>
-				{{ movie.runtime }}
+				<p>{{ movie.runtime }} min</p>
 				<h4>Budget</h4>
 				<p>{{ movie.budget | currency }}</p>
 				<h4>Revenue</h4>

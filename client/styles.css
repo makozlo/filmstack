@@ -11,6 +11,10 @@ body {
   display: inline;
 }
 
+.rounded-borders {
+  border-radius: 4px;
+}
+
 .postercontainer {
   background-size: contain;
   width: 132px;
@@ -36,26 +40,6 @@ body {
 
 .jumbotron {
 	height: 500px;
-}
-
-.movie-banner {
-	background-color: #1d364a;
-	color: white;
-	height: 575px;
-}
-
-.movie-banner .movie-title {
-	display: inline;
-	font-size: 38px;
-}
-
-.movie-banner .movie-overview {
-	font-size: 18px;
-}
-
-.movie-banner .release-year {
-	display: inline;
-	font-size: 38px;
 }
 
 .movie-poster {
@@ -220,19 +204,49 @@ body {
   background-color: #f1f1f1;  
 }
 
+.movie-banner {
+  /*background-color: #1d364a;*/
+  /*filter:blur(50px);*/
+  /*background-size: cover;*/
+  color: white;
+  height: 575px;
+}
+
+.background-image {
+  position: absolute;
+  filter: blur(75px);
+  z-index: -1;
+}
+
+.movie-banner .movie-title {
+  display: inline;
+  font-size: 38px;
+}
+
+.movie-banner .movie-overview {
+  font-size: 18px;
+}
+
+.movie-banner .release-year {
+  display: inline;
+  font-size: 38px;
+}
+
 .movie-banner-pad {
   margin-top: 40px;
 }
 
+.page-bottom {
+  background-color: #ffffff;
+}
 .personCard {
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-bottom: 20px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 15px;
   border-radius: 2px;
   height: 300px !important;
   width: 149px !important;
   display: inline-block;
-  background-image: url("https://image.tmdb.org/t/p/w1859YekpRl6ndS7zpY0wwZAWcAXkl8.jpg") !important;
 }
 
 .personCard h4 {
