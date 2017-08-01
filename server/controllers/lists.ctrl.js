@@ -29,11 +29,9 @@ router.route("/")
 
     .post(function (req, res) {
         var response = {};
-        return procedures.addMovie(req.body.movieID, req.body.title, req.body.poster).then(function (success) {
+        return procedures.addMovie(req.body.movieID, req.body.title, req.body.poster, req.body.listID).then(function (success) {
             response.id = success;
-        }).then(procedures.addMovieToList(req.body.movieID, req.body.listID)).then(function (success) {
-            response.listID = success;
-            res.send(response);
+            console.log(success);
         }).catch(function (err) {
             console.log(err);
             res.status(500).send(err);

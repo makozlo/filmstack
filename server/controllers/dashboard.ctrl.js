@@ -19,7 +19,7 @@ router.route('/:id')
     .post(function (req, res) {
         return procedures.createList(req.body.name, req.param.id).then(function (success) {
             res.send(success);
-            console.log(success);
+            // console.log(success);
         }, function (err) {
             console.log(err);
             res.status(500).send(err);

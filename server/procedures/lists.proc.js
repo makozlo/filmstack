@@ -1,7 +1,7 @@
 var db = require("../config/db");
 
-exports.addMovie = function(id, title, poster){
-    return db.empty('add_movie', [id, title, poster]);
+exports.addMovie = function(id, title, poster, listID){
+    return db.empty('add_movie', [id, title, poster, listID]);
 };
 exports.addMovieToList = function(movieID, listID){
     return db.empty('add_to_movie_lists', [movieID, listID]);

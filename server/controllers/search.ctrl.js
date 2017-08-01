@@ -6,7 +6,7 @@ router.route("/:query")
     .post(function (req, res) {
         console.log(req.body.query);
         return procedures.search(req.body.query).then(function (success) {
-            console.log(req.body);
+            // console.log(req.body);
             res.send(success);
             console.log(success);
         }, function (err) {
