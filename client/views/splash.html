@@ -2,8 +2,8 @@
 	<div class="jumbotron full-width square-corners">
 		<div>
 			<!-- Trigger the modal with a button -->
-			<button type="button" class="glyphicon glyphicon-user" "btn btn-info btn-lg" data-toggle="modal" data-target="#loginModal">Log-in</button>
-			<button type="button" class="glyphicon glyphicon-user" "btn btn-info btn-lg" data-toggle="modal" data-target="#signupModel">Sign-Up</button>
+			<button type="button" class="glyphicon glyphicon-user" data-toggle="modal" data-target="#loginModal">Log-in</button>
+			<button type="button" class="glyphicon glyphicon-user" data-toggle="modal" data-target="#signupModel">Sign-Up</button>
 		</div>
 		<div class="logo">
 			<img src="./images/logos/filmstack-logo-large.png" alt="" height="300" class="center-block"><br><br>
@@ -13,10 +13,10 @@
 				<div class="input-group col-md-12">
 					<input type="text" class="form-control input-lg" placeholder="Find a movie" ng-model="query" />
 					<span class="input-group-btn">
-					<button class="btn btn-info btn-lg" type="button" ng-click="search()">
-						<i class="glyphicon glyphicon-search"></i>
-					</button>
-				</span>
+						<button class="btn btn-info btn-lg" type="button" ng-click="search()">
+							<i class="glyphicon glyphicon-search"></i>
+						</button>
+					</span>
 				</div>
 			</div>
 		</div>
@@ -51,8 +51,46 @@
 			<h5 class="inline">{{ result.overview }}</h5>
 		</div>
 	</div>
+	<!-- new login modal -->
+	<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+		<div class="modal-dialog">
+			<div class="loginmodal-container">
+				<h1>Login to Your Account</h1><br>
+				<form>
+					<input type="text" name="user" placeholder="Username" ng-model="username">
+					<input type="password" name="pass" placeholder="Password" ng-model="password">
+					<!-- <input type="submit" name="login" class="login loginmodal-submit" value="Login" ng-click="login()"> -->
+					<button data-dismiss="modal" class="btn btn-primary" ng-click="login()">Login</button>
+				</form>
+				<div class="login-help">
+					<a href="#">Sign Up</a>
+				</div>
+			</div>
+		</div>
+	</div>
 
-	<!-- Log-InModal -->
+	<!-- sign up modal -->
+	<div class="modal fade" id="signupModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+		<div class="modal-dialog">
+			<div class="signupmodal-container">
+				<h1>Create an Account</h1><br>
+				<form>
+					<input type="text" ng-model="username" placeholder="Username">
+					<input type="email" ng-model="email" placeholder="Email">
+					<input type="password" ng-model="password" placeholder="Password">
+					<button data-dismiss="modal" class="btn btn-primary" ng-click="createUser()">SignUp</button>
+				</form>
+				<div class="signup-help">
+					<a href="#">Log-in</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- old code -->
+
+<!-- Log-InModal -->
 	<!-- <div id="loginModel" class="modal fade" role="dialog"> -->
 	<!-- <div class="modal-dialog"> -->
 	<!-- Modal content-->
@@ -72,40 +110,3 @@
 			</div>
 		</div>
 	</div> -->
-
-	<!-- new login modal -->
-	<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-		<div class="modal-dialog">
-			<div class="loginmodal-container">
-				<h1>Login to Your Account</h1><br>
-				<form>
-					<input type="text" name="user" placeholder="Username" ng-model="username">
-					<input type="password" name="pass" placeholder="Password" ng-model="password">
-					<!-- <input type="submit" name="login" class="login loginmodal-submit" value="Login" ng-click="login()"> -->
-					<button data-dismiss="modal" class="btn btn-primary" ng-click="login()">Login</button>
-				</form>
-				<div class="login-help">
-					<a href="#">Sign Up</a>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-	<div class="modal fade" id="signupModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-		<div class="modal-dialog">
-			<div class="signupmodal-container">
-				<h1>Create an Account</h1><br>
-				<form>
-					<input type="text" ng-model="username" placeholder="Username">
-					<input type="email" ng-model="email" placeholder="Email">
-					<input type="password" ng-model="password" placeholder="Password">
-					<button data-dismiss="modal" class="btn btn-primary" ng-click="createUser()">SignUp</button>
-				</form>
-				<div class="signup-help">
-					<a href="#">Log-in</a>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
