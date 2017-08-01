@@ -13,9 +13,6 @@ app.controller('DetailController', ['$scope', '$http', 'DetailFactory', 'CastCre
 	$scope.poster = 'https://image.tmdb.org/t/p/w500' + $scope.movie.poster_path;
 
 	$scope.addToList = function(movieID, title, poster_path) {
-		console.log(movieID);
-		console.log(title);
-		console.log(poster_path);
 
 		var movie = new ListFactory({
 			movieID: movieID,
@@ -27,6 +24,7 @@ app.controller('DetailController', ['$scope', '$http', 'DetailFactory', 'CastCre
 		movie.$save(function(success) {
 			console.log(success);
 		}, function(err) {
+			console.log('nope');
 			console.log(err);
 		});
 	};
