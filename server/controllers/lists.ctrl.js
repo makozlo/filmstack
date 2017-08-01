@@ -26,6 +26,7 @@ router.get("/", function(req, res) {
             res.sendStatus(500);
         })
     })
+<<<<<<< HEAD
 
     .delete(function(req, res) {
         return procedures.destroy(req.params.id).then(function() {
@@ -44,5 +45,7 @@ router.get("/", function(req, res) {
         res.status(500).send(err);
     })
 })
+=======
+>>>>>>> 92a5ccaf6730f4077582c3235d2fe0245122d009
 
 module.exports = router;
