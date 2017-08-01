@@ -19,7 +19,7 @@ app.controller('DetailController', ['$scope', '$http', 'DetailFactory', 'CastCre
 			movieID: movieID,
 			title: title,
 			poster: poster_path,
-			listID: 1 // fix - change to be set to list to be added to
+			listID: 3 // fix - change to be set to list to be added to
 		});
 
 		movie.$save(function(success) {

@@ -1,5 +1,11 @@
 body {
-	font-family: "Raleway", sans-serif;
+	/*font-family: "Raleway", sans-serif;*/
+	
+	background-color: #f4f4f4 !important;
+}
+
+h1, h2, h3, h4, h5, p {
+	font-family: "Montserrat", sans-serif;
 }
 
 .center {
@@ -115,11 +121,50 @@ body {
 }
 
 /**************** search results page *******************/
+.search-results {
+	background-color: #f4f4f4;
+}
 
 .shadow-box {
     -webkit-box-shadow: 0px 3px 16px 0px rgba(0,0,0,0.2);
     -moz-box-shadow: 0px 3px 16px 0px rgba(0,0,0,0.2);
     box-shadow: 0px 3px 16px 0px rgba(0,0,0,0.2);
+}
+
+.result-btn {
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  color: #fc7e0f;
+  font-size: 20px;
+  background: white;
+  padding: 3px 20px 3px 20px;
+  border: solid #fc7e0f 2px;
+  text-decoration: none;
+}
+
+.result-btn:hover {
+  background: #ffffff;
+  text-decoration: none;
+}
+
+.result-box {
+	background-color: #ffffff;
+	padding-left: 0px !important;
+	margin-bottom: 40px;
+}
+
+.result-box div {
+	display: inline !important;
+}
+
+.result-box img {
+	max-width: 233px;
+	display: inline;
+}
+
+.result-box div h3 {
+	margin-top: 15px;
 }
 
 #custom-search-input{
