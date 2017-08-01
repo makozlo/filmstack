@@ -8,38 +8,42 @@ var router = express.Router();
 
 router.get('*', authMw.isLoggedIn);
 
-router.get("/", function(req, res) {
-    return procedures.read(req.params.id).then(function(success){
+router.get("/", function (req, res) {
+    return procedures.read(req.params.id).then(function (success) {
         res.send(success);
-    }, function(err) {
+    }, function (err) {
         console.log(err);
         res.status(500).send(err);
     })
 })
 
-    .delete(function(req, res) {
-        return procedures.remove(req.params.id).then(function() {
+    .delete(function (req, res) {
+        return procedures.remove(req.params.id).then(function () {
             res.sendStatus(204);
-        }, function(err) {
+        }, function (err) {
             console.log(err);
             res.status(500).send(err);
         })
     })
- 
 
-    // .post(function(req, res){
-    //     var response = {};
-    //     return procedures.writeToMovieTable(req.body.id, req.body.title, req.body.poster).then(function(success){
-    //         response.id = success;
-    //     }).then(procedures.writeToMovie_ListTable(req.body.id, req.body.listid)).then(function(success){
-    //         response.
-    //     })
-    // })
 
-    router.get("/:id", function(req, res) {
-    return procedures.read(req.params.id,req.body.listid).then(function(success){
+    .post(function (req, res) {
+        var response = {};
+        return procedures.addMovie(req.body.movieID, req.body.title, req.body.poster).then(function (success) {
+            response.id = success;
+        }).then(procedures.addMovieToList(req.body.id, req.body.listID)).then(function (success) {
+            response.listID = success;
+            res.send(response);
+        }).catch(function (err) {
+            console.log(err);
+            res.status(500).send(err);
+        });
+    });
+
+router.get("/:id", function (req, res) {
+    return procedures.read(req.params.id, req.body.listid).then(function (success) {
         res.send(success);
-    }, function(err) {
+    }, function (err) {
         console.log(err);
         res.status(500).send(err);
     })

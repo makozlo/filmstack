@@ -18,7 +18,7 @@ app.controller('DetailController', ['$scope', '$http', 'DetailFactory', 'CastCre
 		console.log(poster_path);
 
 		var movie = new ListFactory({
-			id: movieID,
+			movieID: movieID,
 			title: title,
 			poster: poster_path,
 			listID: 1 // fix - change to be set to list to be added to

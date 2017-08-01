@@ -1,9 +1,9 @@
 var db = require("../config/db");
 
-exports.write = function(id, title, poster){
+exports.addMovie = function(id, title, poster){
     return db.row('add_movie', [id, title, poster]);
 };
-exports.write = function(movieID, listID){
+exports.addMovieToList = function(movieID, listID){
     return db.row('add_to_movie_list', [movieID, listID]);
 };
 exports.read = function(id) {
