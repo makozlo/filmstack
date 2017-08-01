@@ -69,13 +69,12 @@
 
 	<!-- new login modal -->
 	<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-	<!-- <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"> -->
 	    <div class="modal-dialog">
 			<div class="loginmodal-container">
 				<h1>Login to Your Account</h1><br>
 				<form>
-					<input type="text" name="user" placeholder="Username">
-					<input type="password" name="pass" placeholder="Password">
+					<input type="text" name="user" placeholder="Username" ng-model="username">
+					<input type="password" name="pass" placeholder="Password" ng-model="password">
 					<!-- <input type="submit" name="login" class="login loginmodal-submit" value="Login" ng-click="login()"> -->
 					<button data-dismiss="modal" class="btn btn-primary" ng-click="login()">Login</button>
 				</form>
