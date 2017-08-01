@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var express = require("express");
 var passport = require('passport');
 var procedures = require('../procedures/lists.proc');
@@ -26,5 +27,11 @@ router.get("/", function(req, res) {
             res.sendStatus(500);
         })
     })
+=======
+var express = require('express');
+var procedures = ('../procedures/lists.proc');
+var router =  express.Router();
+
+>>>>>>> 82ddf8a31e4dab2182d00849831f2b74d8a9e5db
 
 module.exports = router;

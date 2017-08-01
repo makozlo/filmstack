@@ -14,6 +14,6 @@ router.use('/search', search);
 router.use('/dashboard', dashboard);
 router.use('/users', user);
 router.use('/cast-crew', castCrew);
-router.use('/lists/:id', lists)
+router.use('/lists', lists);
 
 module.exports = router;
