@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 var express = require("express");
 var passport = require('passport');
 var procedures = require('../procedures/lists.proc');
@@ -27,11 +26,23 @@ router.get("/", function(req, res) {
             res.sendStatus(500);
         })
     })
-=======
-var express = require('express');
-var procedures = ('../procedures/lists.proc');
-var router =  express.Router();
 
->>>>>>> 82ddf8a31e4dab2182d00849831f2b74d8a9e5db
+    .delete(function(req, res) {
+        return procedures.destroy(req.params.id).then(function() {
+            res.sendStatus(204);
+        }, function(err) {
+            console.log(err);
+            res.status(500).send(err);
+        })
+    })
+
+    router.get("/:id", function(req, res) {
+    return procedures.read(req.params.id).then(function(success){
+        res.send(success);
+    }, function(err) {
+        console.log(err);
+        res.status(500).send(err);
+    })
+})
 
 module.exports = router;
