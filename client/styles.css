@@ -17,6 +17,7 @@ body {
 }
 
 .full-width {
+  width: 100% !important;
 	margin-right: 0px !important;
 	margin-left: 0px !important;
 }
@@ -210,7 +211,9 @@ body {
 }
 
 /**** detail page ***/
-
+.detail-page {
+  /*background-color: #14181c;*/
+}
 
 .detail-page .info {
   background-color: #f1f1f1;  
@@ -223,17 +226,17 @@ body {
 .personCard {
   width: 200px !important;
   height: 300px !important;
-  display: inline;
+  display: inline-block;
 }
 
 .personCard h4 {
-  width: 100px;
-  margin-right: 0px !important;
+  display: inline-block
+  margin: 0px !important;
 }
 
 .personCard p {
-  width: 100px;
-  margin-right: 0px !important;
+  display: inline-block
+  margin: 0px !important;
 }
 
 
