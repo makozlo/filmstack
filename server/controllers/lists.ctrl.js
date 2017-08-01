@@ -8,14 +8,15 @@ var router = express.Router();
 
 router.get('*', authMw.isLoggedIn);
 
-router.get("/", function (req, res) {
-    return procedures.read(req.params.id).then(function (success) {
-        res.send(success);
-    }, function (err) {
-        console.log(err);
-        res.status(500).send(err);
+router.route("/") 
+    .get(function (req, res) {
+        return procedures.read(req.params.id).then(function (success) {
+            res.send(success);
+        }, function (err) {
+            console.log(err);
+            res.status(500).send(err);
+        });
     })
-})
 
     .delete(function (req, res) {
         return procedures.remove(req.params.id).then(function () {
@@ -23,15 +24,14 @@ router.get("/", function (req, res) {
         }, function (err) {
             console.log(err);
             res.status(500).send(err);
-        })
+        });
     })
-
 
     .post(function (req, res) {
         var response = {};
         return procedures.addMovie(req.body.movieID, req.body.title, req.body.poster).then(function (success) {
             response.id = success;
-        }).then(procedures.addMovieToList(req.body.id, req.body.listID)).then(function (success) {
+        }).then(procedures.addMovieToList(req.body.movieID, req.body.listID)).then(function (success) {
             response.listID = success;
             res.send(response);
         }).catch(function (err) {
@@ -46,7 +46,7 @@ router.get("/:id", function (req, res) {
     }, function (err) {
         console.log(err);
         res.status(500).send(err);
-    })
-})
+    });
+});
 
 module.exports = router;

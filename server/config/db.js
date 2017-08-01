@@ -13,20 +13,20 @@ exports.pool = pool;
 exports.row = function(procedure, values) {
     return callProcedure(procedure, values).then(function(data) {
         return data[0][0];
-    })
-}
+    });
+};
 
 exports.rows = function(procedure, values) {
     return callProcedure(procedure, values).then(function(data) {
         return data[0];
-    })
-}
+    });
+};
 
 exports.empty = function(procedure, values) {
     return callProcedure(procedure, values).then(function() {
         return;
     });
-}
+};
 
 function callProcedure(procedure, values) {
     return new Promise(function(fulfill, reject) {
@@ -42,9 +42,9 @@ function callProcedure(procedure, values) {
                     } else {
                         fulfill(results);
                     }
-                })
+                });
             }
-        })
+        });
     });
 }
 
