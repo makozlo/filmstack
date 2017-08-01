@@ -132,7 +132,7 @@ body {
 
 /**************** search results page *******************/
 
-.result-box {
+.shadow-box {
     -webkit-box-shadow: 0px 3px 16px 0px rgba(0,0,0,0.2);
     -moz-box-shadow: 0px 3px 16px 0px rgba(0,0,0,0.2);
     box-shadow: 0px 3px 16px 0px rgba(0,0,0,0.2);
@@ -224,8 +224,12 @@ body {
 }
 
 .personCard {
-  width: 200px !important;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  border-radius: 2px;
   height: 300px !important;
+  width: 149px !important;
   display: inline-block;
 }
 
