@@ -211,7 +211,8 @@ body {
 }
 
 /**** detail page ***/
-.detail-page {
+.detail-page img {
+  /*filter:blur(50px);*/
   /*background-color: #14181c;*/
 }
 
@@ -231,6 +232,7 @@ body {
   height: 300px !important;
   width: 149px !important;
   display: inline-block;
+  background-image: url("https://image.tmdb.org/t/p/w1859YekpRl6ndS7zpY0wwZAWcAXkl8.jpg") !important;
 }
 
 .personCard h4 {

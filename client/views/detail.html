@@ -9,8 +9,8 @@
 				<div class="row">
 					<div>
 						<div class="col-lg-12">
-							<h1 class="movie-title">{{ movie.title }}</h1>
-							<p class="release-year text-muted">({{ movie.release_date | date : "yyyy" }})</p>
+							<h1 class="movie-title">{{ movie.title }}</h1></div><br>
+							<p class="release-year">{{ movie.release_date | date : "yyyy" }}</p>
 							<h3>Overview</h3>
 							<p class="movie-overview">{{ movie.overview }}</p>
 							<h3></h3>
@@ -54,9 +54,9 @@
 			<div class="col-sm-9 inline">
 				<h3>Featured Cast</h3>
 				<div class="personCard shadow-box" ng-repeat="person in castCrew.cast | limitTo: 10">
-					<img ng-src="https://image.tmdb.org/t/p/w185{{ person.profile_path }}" alt="" height="225">
-					<!-- <div class="person-photo" ng-style="background-image: url(https://image.tmdb.org/t/p/w185{{ person.profile_path }})"></div> -->
-					<!-- <div class="person-photo" ng-background-image="https://image.tmdb.org/t/p/w185{{ person.profile_path }}"></div> -->
+					<!-- <img ng-src="https://image.tmdb.org/t/p/w185{{ person.profile_path }}" alt="" height="225"> -->
+					<!-- <div ng-style="{'background-image': 'url(https://image.tmdb.org/t/p/w185{{ person.profile_path }})'
+					}"></div> -->
 					<h4>{{ person.name }}</h4>
 					<p>{{ person.character }}</p>
 				</div>
@@ -64,8 +64,11 @@
 			<div class="info col-sm-3">
 				<h3>More Info</h3>
 				<h4>Runtime</h4>
+				{{ movie.runtime }}
 				<h4>Budget</h4>
+				<p>{{ movie.budget | currency }}</p>
 				<h4>Revenue</h4>
+				<p>{{ movie.revenue | currency }}</p>
 			</div>
 		</div>
 	</div>
