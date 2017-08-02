@@ -5,7 +5,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, p {
-	font-family: "Montserrat", sans-serif;
+	font-family: 'Titillium Web', sans-serif;
 }
 
 .center {
@@ -19,6 +19,10 @@ h1, h2, h3, h4, h5, p {
 
 .rounded-borders {
   border-radius: 4px;
+}
+
+.bottom-margin-md {
+  margin-bottom: 20px;
 }
 
 .postercontainer {
@@ -46,6 +50,14 @@ h1, h2, h3, h4, h5, p {
 
 .jumbotron {
 	height: 500px;
+  	background: #ffaf4b;
+  background: -moz-linear-gradient(top, #ffaf4b 0%, #ffaf4b 3%, #ffa741 26%, #fc7e0f 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, #ffaf4b), color-stop(3%, #ffaf4b), color-stop(26%, #ffa741), color-stop(100%, #fc7e0f));
+  background: -webkit-linear-gradient(top, #ffaf4b 0%, #ffaf4b 3%, #ffa741 26%, #fc7e0f 100%);
+  background: -o-linear-gradient(top, #ffaf4b 0%, #ffaf4b 3%, #ffa741 26%, #fc7e0f 100%);
+  background: -ms-linear-gradient(top, #ffaf4b 0%, #ffaf4b 3%, #ffa741 26%, #fc7e0f 100%);
+  background: linear-gradient(to bottom, #ffaf4b 0%, #ffaf4b 3%, #ffa741 26%, #fc7e0f 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', endColorstr='#fc7e0f', GradientType=0 );
 }
 
 .movie-poster {
@@ -201,6 +213,11 @@ h1, h2, h3, h4, h5, p {
 
 .logo {
   height: 320px;
+  padding-top: 5px;
+}
+
+.logo-img {
+  margin-top: 5px;
 }
 
 .modal {
@@ -246,7 +263,7 @@ h1, h2, h3, h4, h5, p {
 }
 
 .detail-page .info {
-  background-color: #f1f1f1;  
+  background-color: #f1f1f1; 
 }
 
 .movie-banner {
@@ -375,7 +392,6 @@ h1, h2, h3, h4, h5, p {
   text-shadow: 0 1px rgba(0,0,0,0.1); 
   background-color: #4d90fe;
   padding: 17px 0px;
-  font-family: roboto;
   font-size: 14px;
   /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
 }
@@ -467,7 +483,6 @@ h1, h2, h3, h4, h5, p {
   text-shadow: 0 1px rgba(0,0,0,0.1); 
   background-color: #4d90fe;
   padding: 17px 0px;
-  font-family: roboto;
   font-size: 14px;
   /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
 }
