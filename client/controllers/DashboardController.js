@@ -1,10 +1,24 @@
-app.controller('DashboardController', ['$scope', '$http', 'DashboardFactory','UserService', '$routeParams','UserFactory', function ($scope, $http, DashboardFactory,  UserService, $routeParams, UserFactory) {
+app.controller('DashboardController', ['$scope', '$http', 'DashboardFactory', 'ListFactory', 'UserService', '$routeParams','UserFactory', function ($scope, $http, DashboardFactory, ListFactory, UserService, $routeParams, UserFactory) {
 	//remove below to test for protected routes
 	// UserService.requireLogin();
 	UserService.me().then(function(user){
-		console.log("Got that");
 		$scope.user = user;
+
+		var dashInfo = new DashboardFactory({id: $scope.user.id});
+		dashInfo.$get(function(data) {
+			$scope.otherLists = data.otherLists;
+			$scope.mainList = data.mainList;
+		});
 	});
+
+	$scope.changeView = function(listID) {
+		var newList = new ListFactory({id: listID});
+		newList.$get(function(data) {
+			$scope.mainList = data.mainList;
+			console.log(data.mainList);
+		})
+	}
+	
 }]);
 
 
