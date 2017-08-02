@@ -23,12 +23,13 @@ app.controller('DetailController', ['$scope', '$http', 'DetailFactory', 'CastCre
 	$scope.lists = ListFactory.query();
 	console.log($scope.lists);
 
-	$scope.addToList = function(movieID, title, poster_path, listID) {
+	$scope.addToList = function(movieID, title, poster_path, listID, listName) {
 		var movie = new ListFactory({
 			movieID: movieID,
 			title: title,
 			poster: poster_path,
-			listID: listID 
+			listID: listID,
+			listName: "" 
 		});
 
 		movie.$save(function(success) {

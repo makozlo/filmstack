@@ -31,7 +31,8 @@ router.route("/")
 
     .post(function (req, res) {
         var response = {};
-        return procedures.addMovie(req.body.movieID, req.body.title, req.body.poster, req.body.listID).then(function (success) {
+        // return procedures.addMovie(req.body.movieID, req.body.title, req.body.poster, req.body.listID, req.body.listName).then(function (success) {
+        return procedures.addToSpecificList(req.body.movieID, req.body.title, req.body.poster, req.body.listID, req.body.listName).then(function (success) {
             response.id = success;
             console.log(success);
         }).catch(function (err) {
