@@ -60,6 +60,42 @@ h1, h2, h3, h4, h5, p {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', endColorstr='#fc7e0f', GradientType=0 );
 }
 
+.login-container {
+	margin-top: 50px;
+}
+
+.login-btn {
+	-webkit-border-radius: 28;
+  	-moz-border-radius: 28;
+  	border-radius: 28px;
+  	width: 200px;
+  	color: #fc7e0f;
+  	font-size: 20px;
+  	background: #f4f4f4;
+  	padding: 3px 20px 3px 20px;
+  	border: solid #fc7e0f 2px;
+  	text-decoration: none;
+}
+
+.login-btn:hover {
+  background: #fc7e0f;
+  color: white;
+  text-decoration: none;
+}
+
+.feature-box {
+	background-color: white;
+	height: 225px;
+	padding: 10px 10px 10px 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.feature-box h3 {
+	margin-top: 7px;
+	font-weight: bold;
+}
+
 .movie-poster {
     display: inline;
     margin: 0px;
@@ -276,7 +312,7 @@ h1, h2, h3, h4, h5, p {
 
 .background-image {
   position: absolute;
-  filter: blur(75px);
+  filter: blur(60px);
   z-index: -1;
 }
 
