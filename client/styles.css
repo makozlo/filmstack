@@ -8,6 +8,12 @@ h1, h2, h3, h4, h5, p {
 	font-family: 'Titillium Web', sans-serif;
 }
 
+body .navbar {
+  background-color: #34343c;
+  border: none;
+  margin: 0px;
+}
+
 .center {
   display: block;
   margin: auto;
@@ -576,4 +582,11 @@ footer {
 
 #rowdisclaimers {
   float: right;
+}
+
+
+/********* dashboard *********/
+.content small{
+  color: #fc7e0f;
+  /*background-color: #34343c;*/
 }

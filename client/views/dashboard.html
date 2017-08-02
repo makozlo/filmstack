@@ -9,15 +9,15 @@
 <div class="container-fluid">
 	<div class="row content">
 		<div class="col-sm-3 sidenav">
+			<h4><small>LISTS</small></h4>
 			<!-- <h4>My Lists</h4> -->
-			<ul class="nav nav-pills nav-stacked">
+		<!-- 	<ul class="nav nav-pills nav-stacked">
 				<li class="active"><a href="">Watchlist</a></li>
-			</ul>
-			<button ng-click="changeView(3)">test</button>
+			</ul> -->
+			<!-- <button ng-click="changeView(3)">test</button> -->
 			<hr>
-			<h4>Custom</h4>
 			<ul class="nav nav-pills nav-stacked">
-				<li ng-repeat="otherList in otherLists" ng-click="changeView(otherlist.id)">{{ otherList.name }}</li>
+				<li ng-repeat="otherList in otherLists" ng-click="changeView(otherlist.id)">- {{ otherList.name }}</li>
 			</ul><br>
 			<button class="btn btn-primary" data-toggle="modal" data-target="#loginModal">Create New List</button>
 		</div>
