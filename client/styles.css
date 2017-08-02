@@ -48,6 +48,12 @@ h1, h2, h3, h4, h5, p {
     margin: 0px;
 }
 
+footer {
+  margin-top: 200px;
+  background-color: #34343c;
+  height: 200px;
+}
+
 .jumbotron {
 	height: 500px;
   	background: #ffaf4b;
@@ -336,7 +342,9 @@ h1, h2, h3, h4, h5, p {
 
 .page-bottom {
   background-color: #ffffff;
+  height: 900px;
 }
+
 .personCard {
   margin-left: 15px;
   margin-right: 15px;
