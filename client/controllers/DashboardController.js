@@ -16,8 +16,21 @@ app.controller('DashboardController', ['$scope', '$http', 'DashboardFactory', 'L
 		newList.$get(function(data) {
 			$scope.mainList = data.mainList;
 			console.log(data.mainList);
-		})
-	}
+		});
+	};
+
+	$scope.createList = function(listname) {
+		var createdList = new DashboardFactory(
+			{
+				name: listname,
+				userid: $scope.user.id
+			}
+		);
+
+		createdList.$save(function(success) {
+			console.log(success);
+		});
+	};
 	
 }]);
 
