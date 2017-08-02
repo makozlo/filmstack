@@ -10,7 +10,7 @@ router.get('*', authMw.isLoggedIn);
 
 router.route("/") 
     .get(function (req, res) {
-        return procedures.read(req.params.id).then(function (success) {
+        return procedures.read(req.user.id).then(function (success) {
             console.log(success);
             res.send(success);
             console.log(success);
@@ -41,7 +41,7 @@ router.route("/")
     });
 
 router.route("/:id") 
-    .get(function (req, res) {
+    .get(function(req, res) {
     return procedures.getSingleList(req.params.id, req.body.listid).then(function (success) {
         res.send(success);
     }, function (err) {
@@ -50,14 +50,15 @@ router.route("/:id")
     })
 
     .post(function(req, res) {
+        console.log('made it to post');
         return procedures.read(req.body.id).then(function(success) {
-            console.log(success);
+            //console.log(success);
             res.send(success);
         }, function(err){
             console.log(err);
             res.status(500).send(err);
-        })
-    })
+        });
+    });
 });
 
 module.exports = router;

@@ -8,6 +8,12 @@ h1, h2, h3, h4, h5, p {
 	font-family: 'Titillium Web', sans-serif;
 }
 
+body .navbar {
+  background-color: #34343c;
+  border: none;
+  margin: 0px;
+}
+
 .center {
   display: block;
   margin: auto;
@@ -309,7 +315,7 @@ footer {
 }
 
 .movie-banner {
-  /*background-color: #1d364a;*/
+  /*background-color: #34343c;*/
   /*filter:blur(50px);*/
   /*background-size: cover;*/
   color: white;
@@ -577,3 +583,12 @@ footer {
   float: right;
 }
 
+<<<<<<< HEAD
+=======
+
+/********* dashboard *********/
+.content small{
+  color: #fc7e0f;
+  /*background-color: #34343c;*/
+}
+>>>>>>> c83558fbd582fee47d9d64a862f3216e22794c93

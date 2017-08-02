@@ -3,7 +3,7 @@ var mysql = require("mysql");
 var pool = mysql.createPool({
     connectionLimit: 10,
     host: process.env.hostname,
-    user: process.env.username,
+    user:"fsadmin",
     password: process.env.password,
     database: 'FilmStack'
 });

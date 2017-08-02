@@ -3,6 +3,7 @@ app.controller('DashboardController', ['$scope', '$http', 'DashboardFactory', 'L
 	// UserService.requireLogin();
 	UserService.me().then(function(user){
 		$scope.user = user;
+		console.log(user);
 
 		var dashInfo = new DashboardFactory({id: $scope.user.id});
 		dashInfo.$get(function(data) {
