@@ -1,4 +1,4 @@
-app.controller('DetailController', ['$scope', '$http', 'DetailFactory', 'CastCrewFactory', 'ListFactory', function ($scope, $http, DetailFactory, CastCrewFactory, ListFactory) {
+app.controller('DetailController', ['$scope', '$http', 'DetailFactory', 'CastCrewFactory', 'ListFactory','UserService', function ($scope, $http, DetailFactory, CastCrewFactory, ListFactory, UserService) {
 	
 	function getMovieID() {
 		array = location.pathname.split('/');
@@ -9,13 +9,27 @@ app.controller('DetailController', ['$scope', '$http', 'DetailFactory', 'CastCre
 	var movieDbID = getMovieID();
 
 	$scope.movie = DetailFactory.get({ id: movieDbID });
-	console.log($scope.movie);
 	$scope.castCrew = CastCrewFactory.get({ id: movieDbID });
 	$scope.poster = 'https://image.tmdb.org/t/p/w500' + $scope.movie.poster_path;
 
-	$scope.lists = ListFactory.query();
-
-	console.log($scope.lists);
+	UserService.me().then(function(user){
+	$scope.user = user;
+	var lists = new ListFactory({id: $scope.user.id});
+		lists.$save(function(data) {
+			console.log(data);
+			$scope.lists = data.lists;
+		});
+	});
+	//var lists = new ListFactory();
+	// lists.$query(function(success) {
+	// 	console.log(success);
+	// });
+	//lists.$query()
+	//.then(function(data) {
+	//console.log(data);
+	//})
+	// $scope.lists = ListFactory.$query({id: 1});
+	// console.log($scope.lists);
 	$scope.addToList = function(movieID, title, poster_path) {
 
 		var movie = new ListFactory({

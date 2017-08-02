@@ -13,6 +13,7 @@ router.route("/")
         return procedures.read(req.user.id).then(function (success) {
             console.log(success);
             res.send(success);
+            console.log(success);
         }, function (err) {
             console.log(err);
             res.status(500).send(err);
@@ -39,13 +40,24 @@ router.route("/")
         });
     });
 
-router.get("/:id", function (req, res) {
+router.route("/:id") 
+    .get(function (req, res) {
     return procedures.getSingleList(req.params.id, req.body.listid).then(function (success) {
         res.send(success);
     }, function (err) {
         console.log(err);
         res.status(500).send(err);
-    });
+    })
+
+    .post(function(req, res) {
+        return procedures.read(req.body.id).then(function(success) {
+            console.log(success);
+            res.send(success);
+        }, function(err){
+            console.log(err);
+            res.status(500).send(err);
+        })
+    })
 });
 
 module.exports = router;
