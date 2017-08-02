@@ -52,7 +52,7 @@ router.route("/:id")
     .post(function(req, res) {
         console.log('made it to post');
         return procedures.read(req.body.id).then(function(success) {
-            console.log(success);
+            //console.log(success);
             res.send(success);
         }, function(err){
             console.log(err);
