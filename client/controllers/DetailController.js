@@ -15,9 +15,9 @@ app.controller('DetailController', ['$scope', '$http', 'DetailFactory', 'CastCre
 	UserService.me().then(function(user){
 	$scope.user = user;
 	var lists = new ListFactory({id: $scope.user.id});
-		lists.$query(function(data) {
+		lists.$save(function(data) {
+			console.log(data);
 			$scope.lists = data.lists;
-			console.log($scope.lists);
 		});
 	});
 	//var lists = new ListFactory();
