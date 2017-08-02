@@ -35,9 +35,13 @@ router.get('/logout', function(req, res){
     });
 });
 
+router.get('/me', authMw.isLoggedIn, function(req,res){
+    res.send(req.user);
+});
+
 router.route('/:id')
     .get(function(req, res) {
-        procedures.read(req.user.id).then(function(data) {
+        procedures.read(req.body.id).then(function(data) {
         // procedures.read().then(function(data) {
             res.send(data);
             // console.log(data);
@@ -90,22 +94,10 @@ router.route("/")
         });
     });
 
-router.get('/me', authMw.isLoggedIn, function(req,res){
-    res.send(req.user.id);
-});
+
 
 /*
 Useful little tip to maintain a user's session when they're already logged in
 */
-this.me = function(){
-    if(user){
-        return Promise.resolve(user);
-    }
-    return $http({
-        url: 'http://localhost:3000/api/users/me'
-    }).then(function(success){
-        user = success.data;
-        return user;
-    });
-};
+
 module.exports = router;
