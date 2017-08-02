@@ -39,7 +39,7 @@ router.route("/")
     });
 
 router.get("/:id", function (req, res) {
-    return procedures.read(req.params.id, req.body.listid).then(function (success) {
+    return procedures.getSingleList(req.params.id, req.body.listid).then(function (success) {
         res.send(success);
     }, function (err) {
         console.log(err);

@@ -9,7 +9,7 @@ exports.addMovieToList = function(movieID, listID){
 exports.read = function(id) {
     return db.rows('get_all_user_lists', [id]);
 };
-exports.read = function (userID, listID) {
+exports.getSingleList = function (userID, listID) {
     return db.row('get_single_list', [userID, listID]);
 };
 exports.remove = function (id) {
