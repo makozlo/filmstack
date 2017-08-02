@@ -10,8 +10,9 @@ router.get('*', authMw.isLoggedIn);
 
 router.route("/") 
     .get(function (req, res) {
-        return procedures.read(req.params.id).then(function (success) {
+        return procedures.read(req.user.id).then(function (success) {
             res.send(success);
+            console.log(success);
         }, function (err) {
             console.log(err);
             res.status(500).send(err);
