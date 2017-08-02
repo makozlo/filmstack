@@ -20,6 +20,9 @@ app.controller('DetailController', ['$scope', '$http', 'DetailFactory', 'CastCre
 		});
 	});
 
+	$scope.lists = ListFactory.query();
+	console.log($scope.lists);
+
 	$scope.addToList = function(movieID, title, poster_path) {
 		var movie = new ListFactory({
 			movieID: movieID,
