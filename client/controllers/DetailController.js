@@ -13,9 +13,8 @@ app.controller('DetailController', ['$scope', '$http', 'DetailFactory', 'CastCre
 	$scope.castCrew = CastCrewFactory.get({ id: movieDbID });
 	$scope.poster = 'https://image.tmdb.org/t/p/w500' + $scope.movie.poster_path;
 
-	var list = new ListFactory();
-
-	list.$query(function(data) {
+	
+	ListFactory.$query(function(data) {
 		console.log(data);
 		$scope.lists = data;
 	});
