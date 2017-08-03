@@ -27,8 +27,11 @@
 			<hr>
 			<div class="inline postercontainer" ng-repeat="movie in mainList">
 				<a ng-href="http://localhost:3000/detail/{{ movie.movieID }}">
-					<img class="poster" ng-src="https://image.tmdb.org/t/p/w500{{ movie.poster }}" alt="" height="200" width="132">
+					<!-- <img class="poster" ng-src="https://image.tmdb.org/t/p/w500{{ movie.poster }}" alt="" height="200" width="132"> -->
+					<img class="poster" ng-src="https://image.tmdb.org/t/p/w500{{ movie.poster }}" alt="" height="275">
 				</a>
+				<!-- <button>Remove</button>
+				<button>Mark Watched</button> -->
 			</div> 
 		</div>
 	</div>
