@@ -10,7 +10,7 @@ router.get('*', authMw.isLoggedIn);
 
 router.route("/") 
     .get(function (req, res) {
-        return procedures.read(req.user.id).then(function (success) {
+        return procedures.all(req.user.id).then(function (success) {
             console.log(success);
             res.send(success);
             console.log(success);
@@ -31,7 +31,8 @@ router.route("/")
 
     .post(function (req, res) {
         var response = {};
-        return procedures.addMovie(req.body.movieID, req.body.title, req.body.poster, req.body.listID).then(function (success) {
+        // return procedures.addMovie(req.body.movieID, req.body.title, req.body.poster, req.body.listID, req.body.listName).then(function (success) {
+        return procedures.addToSpecificList(req.body.movieID, req.body.title, req.body.poster, req.body.listID, req.body.listName).then(function (success) {
             response.id = success;
             console.log(success);
         }).catch(function (err) {
@@ -40,25 +41,26 @@ router.route("/")
         });
     });
 
-router.route("/:id") 
+router.route('/:id') 
     .get(function(req, res) {
-    return procedures.getSingleList(req.params.id, req.body.listid).then(function (success) {
-        res.send(success);
-    }, function (err) {
-        console.log(err);
-        res.status(500).send(err);
+        return procedures.getSingleList(req.params.id, req.body.listid).then(function (success) {
+            res.send(success);
+        }, function(err) {
+            console.log(err);
+            res.status(500).send(err);
+        });
     })
 
     .post(function(req, res) {
         console.log('made it to post');
-        return procedures.read(req.body.id).then(function(success) {
+        return procedures.read(req.body.id)
+        .then(function(success) {
             //console.log(success);
             res.send(success);
         }, function(err){
             console.log(err);
             res.status(500).send(err);
-        });
+        });           
     });
-});
 
 module.exports = router;

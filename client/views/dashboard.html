@@ -43,7 +43,7 @@
 			<h1>Create a New List</h1><br>
 			<form>
 				<label for="newlistname" id="newlistname-label">List Name:</label>
-				<input type="text" name="user" placeholder="My Awesome List" ng-model="newlistname">
+				<input type="text" name="user" placeholder="My Awesome List" maxlength="50" ng-model="newlistname">
 				<button data-dismiss="modal" class="btn btn-primary" ng-click="createList(newlistname)">Create List</button>
 			</form>
 		</div>

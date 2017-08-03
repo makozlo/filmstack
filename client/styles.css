@@ -17,10 +17,16 @@ body .navbar {
 .center {
   display: block;
   margin: auto;
+  text-align: center;
 }
 
 .inline {
   display: inline;
+}
+
+.icon {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .rounded-borders {
@@ -97,9 +103,9 @@ footer {
 
 .feature-box {
 	background-color: white;
-	height: 225px;
-	padding: 10px 10px 10px 10px;
+	padding: 10px 20px 10px 20px;
 	margin-left: 10px;
+  margin-bottom: 20px;
 	margin-right: 10px;
 }
 
@@ -366,6 +372,15 @@ footer {
   height: 900px;
 }
 
+.cast-container h4 {
+  display: inline;
+  text-align: left;
+}
+
+.cast-container p {
+  text-align: left;
+}
+
 .personCard {
   margin-left: 15px;
   margin-right: 15px;
@@ -374,6 +389,9 @@ footer {
   height: 300px !important;
   width: 149px !important;
   display: inline-block;
+  /*background-image: url("https://image.tmdb.org/t/p/w185/5sJr4bITEffg5yz7Q4QQAIHJLLp.jpg");*/
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .personCard h4 {

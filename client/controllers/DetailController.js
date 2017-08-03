@@ -12,29 +12,37 @@ app.controller('DetailController', ['$scope', '$http', 'DetailFactory', 'CastCre
 	$scope.poster = 'https://image.tmdb.org/t/p/w500' + $scope.movie.poster_path;
 
 	UserService.me().then(function(user){
-	$scope.user = user;
+		$scope.user = user;
 		var lists = new ListFactory({id: $scope.user.id});
 		lists.$save(function(data) {
-			//console.log(data);
+			// console.log('data detail controller', data);
 			$scope.lists = data.lists;
+		}, function(err) {
+			console.log('err', err);
 		});
 	});
 
-	$scope.lists = ListFactory.query();
-	console.log($scope.lists);
+	// var userLists = new ListFactory({id: $scope.user.id});
+	// $scope.userLists = ListFactory.query();
+	$scope.userLists = ListFactory.query(function(success) {
+		console.log(success);
+	}, function(err) {
+		console.log(err);
+	});
+	console.log($scope.userLists);
 
-	$scope.addToList = function(movieID, title, poster_path) {
+	$scope.addToList = function(movieID, title, poster_path, listID, listName) {
 		var movie = new ListFactory({
-			movieID: $scope.movieID,
-			title: $scope.title,
-			poster: $scope.poster_path,
-			listID: 3 // fix - change to be set to list to be added to
+			movieID: movieID,
+			title: title,
+			poster: poster_path,
+			listID: listID,
+			listName: "" 
 		});
 
 		movie.$save(function(success) {
 			console.log(success);
-		}, function(err) {
-			console.log('nope');
+		}, function(err) {			
 			console.log(err);
 		});
 	};

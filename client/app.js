@@ -19,5 +19,5 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
     .when('/dashboard', {
         templateUrl: 'views/dashboard.html',
         controller: 'DashboardController'
-    })
+    });
 }]);
