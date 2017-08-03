@@ -37,7 +37,12 @@ app.controller('DashboardController', ['$scope', '$http', 'DashboardFactory', 'L
 
 		location.reload();
 	};
-	
+
+	$scope.logOut = function(){
+           UserFactory.get({id: $scope.user.id}, function() {
+                window.location.replace('http://localhost:3000');
+           })
+        }
 }]);
 
 
