@@ -22,7 +22,6 @@ app.controller('DetailController', ['$scope', '$http', 'DetailFactory', 'CastCre
 		});
 	});
 
-
 	$scope.lists = ListFactory.query();
 	console.log($scope.lists);
 
