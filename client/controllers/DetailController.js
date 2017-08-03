@@ -15,10 +15,11 @@ app.controller('DetailController', ['$scope', '$http', 'DetailFactory', 'CastCre
 		$scope.user = user;
 		var lists = new ListFactory({id: $scope.user.id});
 		lists.$save(function(data) {
+			console.log('data detail controller', data);
 			$scope.lists = data.lists;
 			console.log('something');
 		}, function(err) {
-			console.log(err);
+			console.log('err', err);
 		});
 	});
 

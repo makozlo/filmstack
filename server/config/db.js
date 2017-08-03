@@ -18,6 +18,7 @@ exports.row = function(procedure, values) {
 
 exports.rows = function(procedure, values) {
     return callProcedure(procedure, values).then(function(data) {
+        console.log("rows data", data);
         return data[0];
     });
 };
