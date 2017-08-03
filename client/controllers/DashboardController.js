@@ -3,21 +3,20 @@ app.controller('DashboardController', ['$scope', '$http', 'DashboardFactory', 'L
 	// UserService.requireLogin();
 	UserService.me().then(function(user){
 		$scope.user = user;
-		console.log(user);
 
 		var dashInfo = new DashboardFactory({id: $scope.user.id});
 		dashInfo.$get(function(data) {
 			$scope.otherLists = data.otherLists;
-			console.log($scope.otherLists);
 			$scope.mainList = data.mainList;
 		});
 	});
 
 	$scope.changeView = function(listID) {
-		var newList = new ListFactory({id: $scope.user.id, listid: listID});
-		newList.$get(function(data) {
-			$scope.mainList = data.mainList;
-			console.log(data.mainList);
+		var newList = new DashboardFactory({id: $scope.user.id, listid: listID});
+		newList.$save(function(data) {
+			$scope.mainList = data.lists;
+		}, function(err) {
+			console.log(err);
 		});
 	};
 

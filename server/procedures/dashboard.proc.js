@@ -15,3 +15,7 @@ exports.createList = function(name, id) {
 exports.deleteList = function(id) {
     return db.empty('delete_list', [id]);
 };
+
+exports.getSingleList = function (userID, listID) {
+    return db.rows('get_single_list', [userID, listID]);
+};

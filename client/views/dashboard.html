@@ -26,10 +26,14 @@
 			<h4><small>WATCHLIST</small></h4>
 			<hr>
 			<div class="inline postercontainer" ng-repeat="movie in mainList">
-				<a ng-href="http://localhost:3000/detail/{{ movie.movieID }}">
-					<!-- <img class="poster" ng-src="https://image.tmdb.org/t/p/w500{{ movie.poster }}" alt="" height="200" width="132"> -->
+				<div id="posterdiv" ng-style="{'background-image':'url(https://image.tmdb.org/t/p/w500{{ movie.poster }})'}">
+					
+				</div>
+
+
+				<!-- <a ng-href="http://localhost:3000/detail/{{ movie.movieID }}">
 					<img class="poster" ng-src="https://image.tmdb.org/t/p/w500{{ movie.poster }}" alt="" height="275">
-				</a>
+				</a> -->
 				<!-- <button>Remove</button>
 				<button>Mark Watched</button> -->
 			</div> 

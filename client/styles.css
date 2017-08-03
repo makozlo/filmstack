@@ -1,11 +1,9 @@
 body {
-	/*font-family: "Raleway", sans-serif;*/
-	
 	background-color: #f4f4f4 !important;
 }
 
-h1, h2, h3, h4, h5, p {
-	font-family: 'Titillium Web', sans-serif;
+* {
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 body .navbar {
@@ -39,7 +37,10 @@ body .navbar {
 
 .postercontainer {
   background-size: contain;
-  width: 132px;
+  /*width: 132px;*/
+  height: 275px;
+  background-position: center;
+  background-repeat: none;
 }
 
 .full-width {
@@ -381,19 +382,6 @@ footer {
   text-align: left;
 }
 
-.personCard {
-  margin-left: 15px;
-  margin-right: 15px;
-  margin-bottom: 15px;
-  border-radius: 2px;
-  height: 300px !important;
-  width: 149px !important;
-  display: inline-block;
-  /*background-image: url("https://image.tmdb.org/t/p/w185/5sJr4bITEffg5yz7Q4QQAIHJLLp.jpg");*/
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
 .personCard h4 {
   display: inline-block;
   margin: 0px !important;
@@ -592,32 +580,52 @@ footer {
   font-size: 12px;
 }
 
-#footer {
-  height: 70px;
-  width: 100%;
-  bottom: 0;
-  background-color: dimgray;
-  opacity: 0.7;
-  position: absolute;
-}
-
-#col-sm-2 {
-  color: whitesmoke;
-  font-size: 12px;
-}
-
-.logofooter {
-  height: 55px;
-  width: 55px;
-  float: left;
-}
-
-#rowdisclaimers {
-  float: right;
-}
-
 /********* dashboard *********/
 .content small{
   color: #fc7e0f;
   /*background-color: #34343c;*/
+}
+
+
+/****** footer ******/
+#std-footer {
+  position: relative;
+  width: 100%;
+  height: 150px;
+}
+.footerlogo {
+  position: relative;
+  margin-top: 20px;
+}
+
+.row-center-social {
+  color: white;
+  font-size: 10px;
+  position: relative;
+  padding-top: 10px;
+}
+
+#disclaimer {
+  position: relative;
+  margin-top: -5px;
+}
+
+.personCard {
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  border-radius: 2px;
+  height: 300px !important;
+  /*width: 149px !important;*/
+  /*display: inline-block;*/
+  /*background-image: url("https://image.tmdb.org/t/p/w185/5sJr4bITEffg5yz7Q4QQAIHJLLp.jpg");*/
+  /*background-position: center;*/
+  /*background-repeat: no-repeat;*/
+}
+
+#posterdiv {
+  height: 275px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
