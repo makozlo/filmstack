@@ -30,7 +30,11 @@ app.controller('DashboardController', ['$scope', '$http', 'DashboardFactory', 'L
 
 		createdList.$save(function(success) {
 			console.log(success);
+		}, function(err) {
+			console.log('can\'t create a new list', err);
 		});
+
+		location.reload();
 	};
 	
 }]);

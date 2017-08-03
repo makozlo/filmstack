@@ -45,7 +45,7 @@
 		    					<span class="sr-only">Toggle Dropdown</span>
 		  					</button>
 		  					<ul class="dropdown-menu">
-		  						  <li ng-repeat="l in lists" ng-click="addToList(movie.id, movie.title, movie.poster_path, l.id, l.name)">{{ l.name }}</li>
+		  						  <li ng-repeat="userList in userLists" ng-click="addToList(movie.id, movie.title, movie.poster_path, userList.id, userList.name)">{{ userList.name }}</li>
 		  					</ul>
 						</div>
 					</div>
@@ -67,7 +67,7 @@
 				</div>
 			</div>
 			<div class="info col-sm-3">
-				<h3>More Info</h3>
+				<h3>Stats</h3>
 				<h4>Runtime</h4>
 				<p>{{ movie.runtime }} min</p>
 				<h4>Budget</h4>

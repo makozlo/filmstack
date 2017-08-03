@@ -15,16 +15,21 @@ app.controller('DetailController', ['$scope', '$http', 'DetailFactory', 'CastCre
 		$scope.user = user;
 		var lists = new ListFactory({id: $scope.user.id});
 		lists.$save(function(data) {
-			console.log('data detail controller', data);
+			// console.log('data detail controller', data);
 			$scope.lists = data.lists;
-			console.log('something');
 		}, function(err) {
 			console.log('err', err);
 		});
 	});
 
-	$scope.lists = ListFactory.query();
-	console.log($scope.lists);
+	// var userLists = new ListFactory({id: $scope.user.id});
+	// $scope.userLists = ListFactory.query();
+	$scope.userLists = ListFactory.query(function(success) {
+		console.log(success);
+	}, function(err) {
+		console.log(err);
+	});
+	console.log($scope.userLists);
 
 	$scope.addToList = function(movieID, title, poster_path, listID, listName) {
 		var movie = new ListFactory({

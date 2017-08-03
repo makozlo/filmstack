@@ -14,10 +14,11 @@ router.route('/:id')
             console.log(err);
             res.status(500).send(err);
         });
-    })
+    });
 
+router.route('/')
     .post(function (req, res) {
-        return procedures.createList(req.body.name, req.param.id).then(function (success) {
+        return procedures.createList(req.body.name, req.body.userid).then(function (success) {
             res.send(success);
             // console.log(success);
         }, function (err) {
@@ -25,6 +26,5 @@ router.route('/:id')
             res.status(500).send(err);
         });
     });
-
 
 module.exports = router;
