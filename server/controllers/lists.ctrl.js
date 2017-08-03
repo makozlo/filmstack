@@ -41,7 +41,7 @@ router.route("/")
         });
     });
 
-router.route("/:id") 
+router.route('/:id') 
     .get(function(req, res) {
     return procedures.getSingleList(req.params.id, req.body.listid).then(function (success) {
         res.send(success);

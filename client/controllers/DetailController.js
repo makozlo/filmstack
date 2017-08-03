@@ -12,13 +12,16 @@ app.controller('DetailController', ['$scope', '$http', 'DetailFactory', 'CastCre
 	$scope.poster = 'https://image.tmdb.org/t/p/w500' + $scope.movie.poster_path;
 
 	UserService.me().then(function(user){
-	$scope.user = user;
+		$scope.user = user;
 		var lists = new ListFactory({id: $scope.user.id});
 		lists.$save(function(data) {
-			console.log(data);
 			$scope.lists = data.lists;
+			console.log('something');
+		}, function(err) {
+			console.log(err);
 		});
 	});
+
 
 	$scope.lists = ListFactory.query();
 	console.log($scope.lists);
@@ -34,8 +37,7 @@ app.controller('DetailController', ['$scope', '$http', 'DetailFactory', 'CastCre
 
 		movie.$save(function(success) {
 			console.log(success);
-		}, function(err) {
-			console.log('nope');
+		}, function(err) {			
 			console.log(err);
 		});
 	};
