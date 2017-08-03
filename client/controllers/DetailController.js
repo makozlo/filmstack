@@ -15,7 +15,7 @@ app.controller('DetailController', ['$scope', '$http', 'DetailFactory', 'CastCre
 	$scope.user = user;
 		var lists = new ListFactory({id: $scope.user.id});
 		lists.$save(function(data) {
-			console.log(data);
+			//console.log(data);
 			$scope.lists = data.lists;
 		});
 	});
@@ -25,9 +25,9 @@ app.controller('DetailController', ['$scope', '$http', 'DetailFactory', 'CastCre
 
 	$scope.addToList = function(movieID, title, poster_path) {
 		var movie = new ListFactory({
-			movieID: movieID,
-			title: title,
-			poster: poster_path,
+			movieID: $scope.movieID,
+			title: $scope.title,
+			poster: $scope.poster_path,
 			listID: 3 // fix - change to be set to list to be added to
 		});
 
