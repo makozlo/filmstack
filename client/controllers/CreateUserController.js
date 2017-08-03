@@ -9,4 +9,10 @@ app.controller('CreateUserController', ['$scope', 'User', 'UserService', '$locat
             window.location.replace('http://localhost:3000/dashboard');
         });
     };
+
+    $scope.logOut = function(){
+           UserFactory.get({id: 'logout'}, function() {
+                window.location.replace('http://localhost:3000');
+           })
+        }
 }]);
