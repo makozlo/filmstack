@@ -46,11 +46,6 @@
 		  					</button>
 		  					<ul class="dropdown-menu">
 		  						  <li ng-repeat="l in lists" ng-click="addToList(movie.id, movie.title, movie.poster_path, l.id, l.name)">{{ l.name }}</li>
-		    					<!-- <li><a href="#">Action</a></li> -->
-		    					<!-- <li><a href="#">Another action</a></li>
-		    					<li><a href="#">Something else here</a></li>
-		    					<li role="separator" class="divider"></li>
-		   						<li><a href="#">Separated link</a></li> -->
 		  					</ul>
 						</div>
 					</div>
@@ -62,12 +57,13 @@
 		<div class="row page-bottom">
 			<div class="col-sm-9 inline">
 				<h3>Featured Cast</h3>
-				<div class="personCard shadow-box" ng-repeat="person in castCrew.cast | limitTo: 10">
-					<img ng-src="https://image.tmdb.org/t/p/w185{{ person.profile_path }}" alt="" height="225">
-					<!-- <div ng-style="{'background-image': 'url(https://image.tmdb.org/t/p/w185{{ person.profile_path }})'
-					}"></div> -->
-					<h4>{{ person.name }}</h4>
-					<p>{{ person.character }}</p>
+				<div class="cast-container center">
+					<div class="personCard shadow-box" ng-repeat="person in castCrew.cast | limitTo: 10">
+						<img ng-src="https://image.tmdb.org/t/p/w185{{ person.profile_path }}" alt="" height="225">
+						<!-- <div ng-style="{'background-image':'url(https://image.tmdb.org/t/p/w185{{ person.profile_path }})'}"></div> -->
+						<h4>{{ person.name }}</h4>
+						<p>{{ person.character }}</p>
+					</div>
 				</div>
 			</div>
 			<div class="info col-sm-3">
