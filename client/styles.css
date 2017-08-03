@@ -35,13 +35,7 @@ body .navbar {
   margin-bottom: 20px;
 }
 
-.postercontainer {
-  background-size: contain;
-  /*width: 132px;*/
-  height: 275px;
-  background-position: center;
-  background-repeat: none;
-}
+
 
 .full-width {
   width: 100% !important;
@@ -616,15 +610,20 @@ footer {
   margin-bottom: 15px;
   border-radius: 2px;
   height: 300px !important;
-  /*width: 149px !important;*/
-  /*display: inline-block;*/
+  width: 149px !important;
+  display: inline;
   /*background-image: url("https://image.tmdb.org/t/p/w185/5sJr4bITEffg5yz7Q4QQAIHJLLp.jpg");*/
   /*background-position: center;*/
   /*background-repeat: no-repeat;*/
 }
 
-#posterdiv {
-  height: 275px;
+.postercontainer {
+  display: inline-block;
+  margin-bottom: 3px;
+  margin-right: 4px; 
+  margin-left: 4px;
+  height: 273px !important;
+  width: 183px !important;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
