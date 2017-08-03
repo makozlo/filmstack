@@ -29,15 +29,15 @@ app.controller('DetailController', ['$scope', '$http', 'DetailFactory', 'CastCre
 	}, function(err) {
 		console.log(err);
 	});
-	console.log($scope.userLists);
+	// console.log($scope.userLists);
 
-	$scope.addToList = function(movieID, title, poster_path, listID, listName) {
+	$scope.addToList = function(movieID, title, poster_path, listID, userID) {
 		var movie = new ListFactory({
 			movieID: movieID,
 			title: title,
 			poster: poster_path,
 			listID: listID,
-			listName: "" 
+			userID: userID 
 		});
 
 		movie.$save(function(success) {
