@@ -39,6 +39,7 @@ app.controller('DetailController', ['$scope', '$http', 'DetailFactory', 'CastCre
 			listID: listID,
 			userID: userID 
 		});
+		
 
 		movie.$save(function(success) {
 			console.log(success);
