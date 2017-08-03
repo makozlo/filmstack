@@ -47,4 +47,10 @@ app.controller('DetailController', ['$scope', '$http', 'DetailFactory', 'CastCre
 			console.log(err);
 		});
 	};
+
+	$scope.logOut = function(){
+           UserFactory.get({id: 'logout'}, function() {
+                window.location.replace('http://localhost:3000');
+           })
+        }
 }]);
