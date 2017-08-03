@@ -592,32 +592,32 @@ footer {
   font-size: 12px;
 }
 
-#footer {
-  height: 70px;
-  width: 100%;
-  bottom: 0;
-  background-color: dimgray;
-  opacity: 0.7;
-  position: absolute;
-}
-
-#col-sm-2 {
-  color: whitesmoke;
-  font-size: 12px;
-}
-
-.logofooter {
-  height: 55px;
-  width: 55px;
-  float: left;
-}
-
-#rowdisclaimers {
-  float: right;
-}
-
 /********* dashboard *********/
 .content small{
   color: #fc7e0f;
   /*background-color: #34343c;*/
+}
+
+
+/****** footer ******/
+#std-footer {
+  position: relative;
+  width: 100%;
+  height: 150px;
+}
+.footerlogo {
+  position: relative;
+  margin-top: 20px;
+}
+
+.row-center-social {
+  color: white;
+  font-size: 10px;
+  position: relative;
+  padding-top: 10px;
+}
+
+#disclaimer {
+  position: relative;
+  margin-top: -5px;
 }
