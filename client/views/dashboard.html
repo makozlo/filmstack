@@ -22,8 +22,13 @@
 		<div class="col-sm-9">
 			<h4><small>WATCHLIST</small></h4>
 			<hr>
-				<div class="posterdiv" ng-repeat="movie in mainList" ng-style="{'background-image':'url(https://image.tmdb.org/t/p/w500{{ movie.poster }})'}"></div>
-				<!-- <div class="poster-overlay"></div> -->
+			<div class="posterdiv" ng-repeat="movie in mainList" ng-style="{'background-image':'url(https://image.tmdb.org/t/p/w500{{ movie.poster }})'}">
+				<div class="poster-overlay"></div>
+				<a href="/detail/{{ movie.movieID }}">	
+					<div class="view-movie center"><h4>MOVIE DETAILS</h4></div>
+				</a>
+				<div class="remove-movie center"><h4>REMOVE</h4></div>
+			</div>
 		</div>
 	</div>
 </div>
