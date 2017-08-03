@@ -617,14 +617,28 @@ footer {
   /*background-repeat: no-repeat;*/
 }
 
-.postercontainer {
+.postercontatiner {
+  position: relative;
   display: inline-block;
+  height: 273px !important;
+  width: 183px !important;
   margin-bottom: 3px;
   margin-right: 4px; 
   margin-left: 4px;
+}
+
+.posterdiv {
+  display: inline-block;
   height: 273px !important;
   width: 183px !important;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.poster-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
 }

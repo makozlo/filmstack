@@ -1,9 +1,6 @@
 <navbar></navbar>
 <div class="dashboard-header">
 	<h2>{{ user.username }}</h2>
-	<h3>{{ user.email }}</h3>
-	<h5>{{ moviecount }} movies</h5>
-	<h5>{{ listcount }} lists</h5>
 </div>
 
 <div class="container-fluid">
@@ -25,7 +22,8 @@
 		<div class="col-sm-9">
 			<h4><small>WATCHLIST</small></h4>
 			<hr>
-			<div class="postercontainer" ng-repeat="movie in mainList" ng-style="{'background-image':'url(https://image.tmdb.org/t/p/w500{{ movie.poster }})'}"></div> 
+				<div class="posterdiv" ng-repeat="movie in mainList" ng-style="{'background-image':'url(https://image.tmdb.org/t/p/w500{{ movie.poster }})'}"></div>
+				<!-- <div class="poster-overlay"></div> -->
 		</div>
 	</div>
 </div>

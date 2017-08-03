@@ -11,6 +11,7 @@ app.controller('DashboardController', ['$scope', '$http', 'DashboardFactory', 'L
 		});
 	});
 
+
 	$scope.changeView = function(listID) {
 		var newList = new DashboardFactory({id: $scope.user.id, listid: listID});
 		newList.$save(function(data) {
