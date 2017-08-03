@@ -14,13 +14,23 @@ router.route('/:id')
             console.log(err);
             res.status(500).send(err);
         });
+    })
+
+    .post(function(req, res) {
+        return procedures.getSingleList(req.body.id, req.body.listid).then(function(success) {
+            res.send({
+                lists: success
+            });
+        }, function(err) {
+            console.log(err);
+            res.status(500).send(err);
+        });
     });
 
 router.route('/')
     .post(function (req, res) {
         return procedures.createList(req.body.name, req.body.userid).then(function (success) {
             res.send(success);
-            // console.log(success);
         }, function (err) {
             console.log(err);
             res.status(500).send(err);

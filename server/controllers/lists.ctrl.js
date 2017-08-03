@@ -11,9 +11,7 @@ router.get('*', authMw.isLoggedIn);
 router.route("/") 
     .get(function (req, res) {
         return procedures.all(req.user.id).then(function (success) {
-            console.log(success);
             res.send(success);
-            console.log(success);
         }, function (err) {
             console.log(err);
             res.status(500).send(err);
@@ -34,7 +32,6 @@ router.route("/")
         // return procedures.addMovie(req.body.movieID, req.body.title, req.body.poster, req.body.listID, req.body.listName).then(function (success) {
         return procedures.addToSpecificList(req.body.movieID, req.body.title, req.body.poster, req.body.listID, req.body.userID).then(function (success) {
             response.id = success;
-            console.log(success);
         }).catch(function (err) {
             console.log(err);
             res.status(500).send(err);
@@ -43,7 +40,11 @@ router.route("/")
 
 router.route('/:id') 
     .get(function(req, res) {
-        return procedures.getSingleList(req.params.id, req.body.listid).then(function (success) {
+        return procedures.getSingleList(req.body.id, req.body.listid).then(function (success) {
+            console.log('req.body: ', req.body);
+            console.log('id: ', req.body.id);
+            console.log('List ID: ', req.body.listid);
+            console.log(success);
             res.send(success);
         }, function(err) {
             console.log(err);
