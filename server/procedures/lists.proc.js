@@ -10,9 +10,11 @@ exports.addMovie = function(id, title, poster, listID){
 exports.addToSpecificList = function(movieID, title, poster_path, listID, listName) {
     return db.empty('add_movie_to_specific_list', [movieID, title, poster_path, listID, listName]);
 }
-
-exports.read = function(id) {
+exports.all = function(id) {
     return db.rows('get_all_user_lists', [id]);
+};
+exports.read = function(id) {
+    return db.row('get_all_user_lists', [id]);
 };
 exports.getSingleList = function (userID, listID) {
     return db.row('get_single_list', [userID, listID]);
