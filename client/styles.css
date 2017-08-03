@@ -37,7 +37,10 @@ body .navbar {
 
 .postercontainer {
   background-size: contain;
-  width: 132px;
+  /*width: 132px;*/
+  height: 275px;
+  background-position: center;
+  background-repeat: none;
 }
 
 .full-width {
@@ -379,19 +382,6 @@ footer {
   text-align: left;
 }
 
-.personCard {
-  margin-left: 15px;
-  margin-right: 15px;
-  margin-bottom: 15px;
-  border-radius: 2px;
-  height: 300px !important;
-  width: 149px !important;
-  display: inline-block;
-  /*background-image: url("https://image.tmdb.org/t/p/w185/5sJr4bITEffg5yz7Q4QQAIHJLLp.jpg");*/
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
 .personCard h4 {
   display: inline-block;
   margin: 0px !important;
@@ -618,4 +608,24 @@ footer {
 #disclaimer {
   position: relative;
   margin-top: -5px;
+}
+
+.personCard {
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  border-radius: 2px;
+  height: 300px !important;
+  /*width: 149px !important;*/
+  /*display: inline-block;*/
+  /*background-image: url("https://image.tmdb.org/t/p/w185/5sJr4bITEffg5yz7Q4QQAIHJLLp.jpg");*/
+  /*background-position: center;*/
+  /*background-repeat: no-repeat;*/
+}
+
+#posterdiv {
+  height: 275px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
