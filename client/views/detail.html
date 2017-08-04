@@ -57,7 +57,7 @@
 		</div>
 		<div class="row page-bottom">
 			<div class="col-sm-9">
-				<h4 align="center">FEATURED CAST</h4>
+				<h4 class="orange-text" align="center">FEATURED CAST</h4>
 				<div class="cast-container">
 					<div class="personCard shadow-box" ng-repeat="person in castCrew.cast | limitTo: 10">
 						<div class="photo-box" ng-style="{'background-image':'url(https://image.tmdb.org/t/p/w185{{ person.profile_path }})'}"></div>
@@ -67,7 +67,7 @@
 				</div>
 			</div>
 			<div class="info col-sm-3">
-				<h4>Stats</h4>
+				<h4 class="orange-text">Stats</h4>
 				<h4>Runtime</h4>
 				<p>{{ movie.runtime }} min</p>
 				<h4>Budget</h4>
