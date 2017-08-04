@@ -23,6 +23,4 @@ exports.getSingleList = function (userID, listID) {
     return db.rows('get_single_list', [userID, listID]);
 };
 
-exports.remove = function (id) {
-    return db.empty('delete_list', [id]);
-};
+

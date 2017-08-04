@@ -27,7 +27,7 @@
 				<a href="/detail/{{ movie.movieID }}">	
 					<div class="view-movie center"><h4>MOVIE DETAILS</h4></div>
 				</a>
-				<div class="remove-movie center"><h4>REMOVE</h4></div>
+				<div ng-click="deleteMovie(movie.movieID)" class="remove-movie center"><h4>REMOVE</h4></div>
 			</div>
 		</div>
 	</div>

@@ -5,6 +5,7 @@ var dashboard = require('./controllers/dashboard.ctrl');
 var user = require('./controllers/users.ctrl');
 var castCrew = require('./controllers/castCrew.ctrl');
 var lists = require('./controllers/lists.ctrl');
+var deleteMovie = require('./controllers/deleteMovie.ctrl');
 var router = express.Router();
 
 
@@ -15,5 +16,6 @@ router.use('/dashboard', dashboard);
 router.use('/users', user);
 router.use('/cast-crew', castCrew);
 router.use('/lists', lists);
+router.use('/deleteMovie', deleteMovie);
 
 module.exports = router;
