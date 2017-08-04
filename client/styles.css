@@ -367,27 +367,6 @@ footer {
   height: 900px;
 }
 
-.cast-container h4 {
-  display: inline;
-  text-align: left;
-}
-
-.cast-container p {
-  text-align: left;
-}
-
-.personCard h4 {
-  display: inline-block;
-  margin: 0px !important;
-}
-
-.personCard p {
-  display: inline-block;
-  margin: 0px !important;
-}
-
-
-
 /*** modal stuff ***/
 
 @import url(http://fonts.googleapis.com/css?family=Roboto);
@@ -604,20 +583,6 @@ footer {
   margin-top: -5px;
 }
 
-.personCard {
-  margin-left: 15px;
-  margin-right: 15px;
-  margin-bottom: 15px;
-  border-radius: 2px;
-  height: 300px !important;
-  width: 149px !important;
-  display: inline;
-  /*background-image: url("https://image.tmdb.org/t/p/w185/5sJr4bITEffg5yz7Q4QQAIHJLLp.jpg");*/
-  /*background-position: center;*/
-  /*background-repeat: no-repeat;*/
-}
-
-
 .posterdiv {
   display: inline-block;
   position: relative;
@@ -685,4 +650,38 @@ footer {
 
 .posterdiv:hover .remove-movie {
   opacity: 1;
+}
+
+
+.cast-container {
+  display: block;
+  margin: auto;
+}
+
+/*.cast-container h4 {
+  display: inline;
+  text-align: left;
+}
+
+.cast-container p {
+  text-align: left;
+}*/
+
+.personCard {
+  position: relative;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  border-radius: 2px;
+  height: 250px;
+  width: 166px;
+  display: inline-block;
+}
+.photo-box {
+  position: absolute;
+  width: 166px;
+  height: 250px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

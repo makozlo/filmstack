@@ -55,14 +55,13 @@
 			</div>
 		</div>
 		<div class="row page-bottom">
-			<div class="col-sm-9 inline">
+			<div class="col-sm-9">
 				<h3>Featured Cast</h3>
-				<div class="cast-container center">
+				<div class="cast-container">
 					<div class="personCard shadow-box" ng-repeat="person in castCrew.cast | limitTo: 10">
-						<!-- <img ng-src="https://image.tmdb.org/t/p/w185{{ person.profile_path }}" alt="" height="225"> -->
-						<div ng-style="{'background-image':'url(https://image.tmdb.org/t/p/w185{{ person.profile_path }})'}"></div>
-						<h4>{{ person.name }}</h4>
-						<p>{{ person.character }}</p>
+						<div class="photo-box" ng-style="{'background-image':'url(https://image.tmdb.org/t/p/w185{{ person.profile_path }})'}"></div>
+						<!-- <h4>{{ person.name }}</h4>
+						<p>{{ person.character }}</p> -->
 					</div>
 				</div>
 			</div>
