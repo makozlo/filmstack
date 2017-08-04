@@ -16,7 +16,7 @@ app.controller('DetailController', ['$scope', '$http', 'DetailFactory', 'CastCre
 		var lists = new ListFactory({id: $scope.user.id});
 		lists.$save(function(data) {
 			$scope.lists = data.lists;
-			console.log($scope.lists[0]);
+			// console.log($scope.lists[0]);
 		}, function(err) {
 			console.log('err', err);
 		});
