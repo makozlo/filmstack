@@ -46,6 +46,8 @@ app.controller('DetailController', ['$scope', '$http', 'DetailFactory', 'CastCre
 		}, function(err) {			
 			console.log(err);
 		});
+
+		console.log(movie);
 	};
 
 	$scope.logOut = function(){

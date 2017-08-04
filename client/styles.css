@@ -656,16 +656,8 @@ footer {
 .cast-container {
   display: block;
   margin: auto;
+  width: 90%;
 }
-
-/*.cast-container h4 {
-  display: inline;
-  text-align: left;
-}
-
-.cast-container p {
-  text-align: left;
-}*/
 
 .personCard {
   position: relative;
@@ -673,10 +665,11 @@ footer {
   margin-right: 15px;
   margin-bottom: 15px;
   border-radius: 2px;
-  height: 250px;
+  height: 325px;
   width: 166px;
   display: inline-block;
 }
+
 .photo-box {
   position: absolute;
   width: 166px;
@@ -684,4 +677,19 @@ footer {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.personCard h4 {
+  position: absolute;
+  display: inline-block;
+  font-weight: bold;
+  margin-left: 15px;
+  bottom: 40px;
+}
+
+.personCard p {
+  position: absolute;
+  display: inline-block;
+  margin-left: 15px;
+  top: 275px;
 }
