@@ -312,7 +312,8 @@ footer {
 }
 
 .detail-page .info {
-  background-color: #f1f1f1; 
+  background-color: #f1f1f1;
+
 }
 
 .movie-banner {
@@ -364,7 +365,7 @@ footer {
 
 .page-bottom {
   background-color: #ffffff;
-  height: 900px;
+  /*height: 900px !important;*/
 }
 
 /*** modal stuff ***/
@@ -650,6 +651,7 @@ footer {
 
 .posterdiv:hover .remove-movie {
   opacity: 1;
+  cursor:pointer;
 }
 
 
@@ -657,6 +659,7 @@ footer {
   display: block;
   margin: auto;
   width: 90%;
+  margin-bottom: 300px;
 }
 
 .personCard {
@@ -692,4 +695,16 @@ footer {
   display: inline-block;
   margin-left: 15px;
   top: 275px;
+}
+
+.more-info {
+  display: block;
+  height: 50px;
+  border-top: 1px solid #d7d7d7;
+  border-bottom: 1px solid #d7d7d7;
+  background-color: #ffffff;
+}
+
+.more-info h3 {
+  margin-top: 12px;
 }
