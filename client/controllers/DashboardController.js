@@ -1,4 +1,4 @@
-app.controller('DashboardController', ['$scope', '$http', 'DashboardFactory', 'ListFactory', 'UserService', '$routeParams','UserFactory', 'DeleteMovieFactory', 'SearchFactory', 'SearchCacheService', function ($scope, $http, DashboardFactory, ListFactory, UserService, $routeParams, UserFactory, DeleteMovieFactory, SearchFactory, SearchCacheService) {
+app.controller('DashboardController', ['$scope', '$http', 'DashboardFactory', 'ListFactory', 'UserService', '$routeParams','UserFactory', 'DeleteMovieFactory', 'SearchFactory', 'SearchCacheService', '$location', function ($scope, $http, DashboardFactory, ListFactory, UserService, $routeParams, UserFactory, DeleteMovieFactory, SearchFactory, SearchCacheService, $location) {
 	//remove below to test for protected routes
 	// UserService.requireLogin();
 	UserService.me().then(function(user){

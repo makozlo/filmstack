@@ -1,4 +1,4 @@
-app.controller('DetailController', ['$scope', '$http', 'DetailFactory', 'CastCrewFactory', 'ListFactory','UserService', function ($scope, $http, DetailFactory, CastCrewFactory, ListFactory, UserService) {
+app.controller('DetailController', ['$scope', '$http', 'DetailFactory', 'CastCrewFactory', 'ListFactory','UserService','SearchFactory', 'SearchCacheService', '$location', function ($scope, $http, DetailFactory, CastCrewFactory, ListFactory, UserService, SearchFactory, SearchCacheService, $location) {
 	
 	function getMovieID() {
 		array = location.pathname.split('/');
@@ -10,7 +10,19 @@ app.controller('DetailController', ['$scope', '$http', 'DetailFactory', 'CastCre
 	$scope.movie = DetailFactory.get({ id: movieDbID });
 	$scope.castCrew = CastCrewFactory.get({ id: movieDbID });
 	$scope.poster = 'https://image.tmdb.org/t/p/w500' + $scope.movie.poster_path;
+	$scope.search = function () {
+		
+		$scope.results = {};
 
+		var movies = new SearchFactory({ query: $scope.query });
+
+		movies.$save(function (data) {
+			$scope.results = data.results;
+			SearchCacheService.setResults(data.results);
+			$location.path('/search-results');
+		});
+	};
+	
 	UserService.me().then(function(user){
 		$scope.user = user;
 		var lists = new ListFactory({id: $scope.user.id});
