@@ -1,4 +1,4 @@
-app.controller('DashboardController', ['$scope', '$http', 'DashboardFactory', 'ListFactory', 'UserService', '$routeParams','UserFactory', 'DeleteMovieFactory', function ($scope, $http, DashboardFactory, ListFactory, UserService, $routeParams, UserFactory, DeleteMovieFactory) {
+app.controller('DashboardController', ['$scope', '$http', 'DashboardFactory', 'ListFactory', 'UserService', '$routeParams','UserFactory', 'DeleteMovieFactory', 'SearchFactory', 'SearchCacheService', function ($scope, $http, DashboardFactory, ListFactory, UserService, $routeParams, UserFactory, DeleteMovieFactory, SearchFactory, SearchCacheService) {
 	//remove below to test for protected routes
 	// UserService.requireLogin();
 	UserService.me().then(function(user){
@@ -12,6 +12,18 @@ app.controller('DashboardController', ['$scope', '$http', 'DashboardFactory', 'L
 			// console.log($scope.mainList);
 		});
 	});
+	
+	$scope.search = function () {
+		$scope.results = {};
+
+		var movies = new SearchFactory({ query: $scope.query });
+
+		movies.$save(function (data) {
+			$scope.results = data.results;
+			SearchCacheService.setResults(data.results);
+			$location.path('/search-results');
+		});
+	};
 
 
 	$scope.changeView = function(listID) {
