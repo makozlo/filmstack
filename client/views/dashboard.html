@@ -1,12 +1,13 @@
 <navbar></navbar>
-<div class="dashboard-header">
-	<h2>{{ user.username }}</h2>
-</div>
 
+<div class="dashboard-header">
+		<h1>{{ user.username }}</h1>
+	</div>
 <div class="container-fluid">
+	
 	<div class="row content">
-		<div class="col-sm-3 sidenav">
-			<h4><small>LISTS</small></h4>
+		<div class="col-sm-2 sidenav">
+			<h4 class="orange-text list-pad">LISTS</h4>
 			<!-- <h4>My Lists</h4> -->
 		<!-- 	<ul class="nav nav-pills nav-stacked">
 				<li class="active"><a href="">Watchlist</a></li>
@@ -14,13 +15,15 @@
 			<!-- <button ng-click="changeView(3)">test</button> -->
 			<hr>
 			<ul class="nav nav-pills nav-stacked">
-				<li ng-repeat="otherList in otherLists" ng-click="changeView(otherList.id)">- {{ otherList.name }}</li>
+				<!-- <li ng-repeat="otherList in otherLists" ng-click="changeView(otherList.id)">{{ otherList.name }}</li> -->
 			</ul><br>
-			<button class="btn btn-primary" data-toggle="modal" data-target="#loginModal">Create New List</button>
+			<div class="orange-button movie-nav" ng-repeat="otherList in otherLists" ng-click="changeView(otherList.id)"><h5>{{ otherList.name }}</h5></div>
+			<!-- <button class="btn btn-primary" data-toggle="modal" data-target="#loginModal">CREATE NEW LIST</h4></button> -->
+			<div class="orange-button-solid" data-toggle="modal" data-target="#loginModal"><h5>Create New List</h5></div>
 		</div>
 
-		<div class="col-sm-9">
-			<h4><small>WATCHLIST</small></h4>
+		<div class="col-sm-10">
+			<h4 class="orange-text">WATCHLIST</h4>
 			<hr>
 			<div class="posterdiv" ng-repeat="movie in mainList" ng-style="{'background-image':'url(https://image.tmdb.org/t/p/w500{{ movie.poster }})'}">
 				<div class="poster-overlay"></div>
@@ -44,7 +47,8 @@
 			<form>
 				<label for="newlistname" id="newlistname-label">List Name:</label>
 				<input type="text" name="user" placeholder="My Awesome List" maxlength="50" ng-model="newlistname">
-				<button data-dismiss="modal" class="btn btn-primary" ng-click="createList(newlistname)">Create List</button>
+				<!-- <button data-dismiss="modal" class="btn btn-primary" ng-click="createList(newlistname)">Create List</button> -->
+				<div class="orange-button" data-dismiss="modal" ng-click="createList(newlistname)"><h4>CREATE LIST</h4></div>
 			</form>
 		</div>
 	</div>
