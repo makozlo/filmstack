@@ -5,15 +5,9 @@ var path = require("path");
 var bodyParser = require("body-parser");
 var api = require('./api');
 var cookieParser = require('cookie-parser');
-
-
 var configurePassport = require('./config/passport');
 var userProc = require('./procedures/users.proc');
 var utils = require('./config/utils');
-
-
-
-
 var mdb = require('moviedb')(process.env.TMDB_API_KEY);
 
 var app = express();
@@ -36,7 +30,6 @@ app.get('*', function(req, res, next) {
         res.sendFile(path.join(clientPath, 'index.html'));
     }
 });
-
 
 function isAsset(path) {
     var pieces = path.split('/');
