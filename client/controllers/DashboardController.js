@@ -55,9 +55,11 @@ app.controller('DashboardController', ['$scope', '$http', 'DashboardFactory', 'L
 
 	$scope.logOut = function(){
            UserFactory.get({id: 'logout'}, function() {
-                window.location.replace('http://localhost:3000');
-           })
-		}
+                // window.location.replace('http://localhost:3000');
+                window.location.replace('/');
+           });
+		};
+
 	$scope.deleteMovie = function(movieID) {
 		var removeMovie = new DeleteMovieFactory(
 			{
@@ -65,12 +67,13 @@ app.controller('DashboardController', ['$scope', '$http', 'DashboardFactory', 'L
 				listID: $scope.currentListID
 			}
 		);
+
 		removeMovie.$save(function(success) {
 			console.log(success);
 		}, function(errr) {
 			console.log(err);
 		}).then(function() {
 			location.reload();
-		})		
+		});
 	};
 }]);

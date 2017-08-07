@@ -26,9 +26,10 @@ app.controller("UserController", ["$scope", "UserFactory", "$location", "UserSer
 
             $scope.logOut = function(){
            UserFactory.get({id: 'logout'}, function() {
-                window.location.replace('http://localhost:3000');
-           })
-        }
+                // window.location.replace('http://localhost:3000');
+                window.location.replace('/');
+           });
+        };
 
         SEOService.setSEO({
             title: 'movies with SEO',

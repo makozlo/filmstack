@@ -24,7 +24,8 @@ app.service('UserService', ['$http', '$location', function($http, $location) {
     this.login = function(username,password){
         return $http({
             method: 'POST',
-            url: 'http://localhost:3000/api/users/login',
+            // url: 'http://localhost:3000/api/users/login',
+            url: '/api/users/login',
             data: {username: username, password: password}
         }).then(function(success){
             user = success.data;
@@ -38,7 +39,8 @@ app.service('UserService', ['$http', '$location', function($http, $location) {
     this.logout = function(){
         return $http({
             method: 'GET',
-            url: 'http://localhost:3000/api/user/logout'
+            // url: 'http://localhost:3000/api/user/logout'
+            url: '/api/user/logout'
         }).then(function(){
             user = undefined;
         });
@@ -49,7 +51,8 @@ app.service('UserService', ['$http', '$location', function($http, $location) {
             return Promise.resolve(user);
         }
         return $http({
-            url: "http://localhost:3000/api/users/me"
+            // url: "http://localhost:3000/api/users/me"
+            url: "/api/users/me"
         }).then(function(success) {
             user = success.data;
             return user;
