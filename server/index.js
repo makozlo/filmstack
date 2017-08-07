@@ -12,6 +12,11 @@ var mdb = require('moviedb')(process.env.TMDB_API_KEY);
 
 var app = express();
 
+
+// added this to try to get Heroku to work
+app.set('port', (process.env.PORT || 3000));
+
+
 var clientPath = path.join(__dirname, "../client");
 app.use(express.static(clientPath));
 app.use(bodyParser.json());
@@ -48,5 +53,7 @@ function isAsset(path) {
     }
 }
 
-app.listen(3000);
-console.log('Server listening on port 3000');
+// app.listen(3000);
+// console.log('Server listening on port' + port);
+
+console.log('Node app is running on port', app.get('port'));
