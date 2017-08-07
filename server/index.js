@@ -1,5 +1,6 @@
 require("dotenv").load();
 var express = require("express");
+var cool = require('cool-ascii-faces');
 var path = require("path");
 var bodyParser = require("body-parser");
 var api = require('./api');
@@ -23,11 +24,6 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 configurePassport(app);
 app.use("/api", api);
-
-
-
-
-
 
 app.get('/', function(req, res) {
     res.send(console.log('Hello World!'));
