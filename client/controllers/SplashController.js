@@ -24,8 +24,8 @@ app.controller('SplashController', ['$scope', '$resource', '$http', 'SearchFacto
 			}, function (err) {
 				console.log(err);
 			});
-		})
-	}
+		});
+	};
 
 	$scope.login = function () {
 
@@ -37,7 +37,8 @@ app.controller('SplashController', ['$scope', '$resource', '$http', 'SearchFacto
 		UserService.login($scope.username, $scope.password).then(function () {
 			// redirect();
 			// $location.path('/dashboard');
-			window.location.replace('http://localhost:3000/dashboard');
+			// window.location.replace('http://localhost:3000/dashboard');
+			window.location.replace('/dashboard');
 		}, function (err) {
 			console.log(err);
 		});
