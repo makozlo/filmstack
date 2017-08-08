@@ -1,16 +1,20 @@
 app.controller('DashboardController', ['$scope', '$http', 'DashboardFactory', 'ListFactory', 'UserService', '$routeParams','UserFactory', 'DeleteMovieFactory', 'SearchFactory', 'SearchCacheService', '$location', function ($scope, $http, DashboardFactory, ListFactory, UserService, $routeParams, UserFactory, DeleteMovieFactory, SearchFactory, SearchCacheService, $location) {
 	//remove below to test for protected routes
 	// UserService.requireLogin();
+
 	UserService.me().then(function(user){
 		$scope.user = user;
-
+		$scope.windowLoaded = false;
 		var dashInfo = new DashboardFactory({id: $scope.user.id});
 		dashInfo.$get(function(data) {
 			$scope.otherLists = data.otherLists;
 			$scope.mainList = data.mainList;
 			$scope.currentListID = $scope.otherLists[0].id;
 			// console.log($scope.mainList);
-		});
+		}).then(function() {
+			console.log('window has loaded');
+			$scope.windowLoaded = true;
+		})
 	});
 	
 	$scope.search = function () {
