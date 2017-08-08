@@ -10,7 +10,6 @@ body .navbar {
   background-color: #34343c;
   border: none;
   margin: 0px;
-  height: 56px;
   padding-left: 50px;
   padding-right:50px;
 }
@@ -175,11 +174,11 @@ footer img {
         }
 
 .btn {
-    height: 30px;
+    /*height: 30px;
     position: absolute;
     right: 0;
     top: 5px;
-    border-radius:1px;
+    border-radius:1px;*/
 } 
 /*.search-form .form-group {
   float: right !important;
@@ -413,7 +412,7 @@ footer img {
 
 .movie-banner .release-year {
   display: inline;
-  font-size: 38px;
+  font-size: 18px;
 }
 
 .movie-banner-pad {
@@ -822,9 +821,8 @@ footer img {
 }
 
 
-#navbar-search-input
-
-button#navbar-search-button {
-  margin-top: 13px !important;
-  background-color: #fc7e0f !important;
+#navbar-search-field {
+  background-color: #34343c;
+  border-color: #999999;
+  color: white;
 }
