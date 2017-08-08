@@ -78,4 +78,22 @@
 		</div>
 		</div>
 	</div>
+
+
+	<div class="modal fade" id="signupModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+		<div class="modal-dialog">
+			<div class="signupmodal-container">
+				<h1>Please log in to add this to your list.</h1><br>
+				<form>
+					<input type="text" ng-model="username" placeholder="Username">
+					<input type="email" ng-model="email" placeholder="Email">
+					<input type="password" ng-model="password" placeholder="Password">
+					<!-- <button data-dismiss="modal" class="btn btn-primary" ng-click="createUser()">SignUp</button> -->
+					<div class="orange-button" data-dismiss="modal" ng-click="createUser()"><h5>SIGN UP</h5></div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
 <fsfooter></fsfooter>

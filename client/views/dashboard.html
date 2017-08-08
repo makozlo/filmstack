@@ -1,7 +1,5 @@
 <navbar></navbar>
-<div id="loader" ng-hide="windowLoaded">
-	<img src="./assets/film-reel.svg" alt="">
-</div>
+
 <div class="dashboard-header">
 		<h1>{{ user.username }}</h1>
 	</div>
@@ -27,6 +25,9 @@
 		<div class="col-sm-10">
 			<h4 class="orange-text">WATCHLIST</h4>
 			<hr>
+			<div id="loader" ng-hide="windowLoaded">
+				<img src="./assets/film-reel.svg" alt="">
+			</div>
 			<div class="posterdiv" ng-repeat="movie in mainList" ng-style="{'background-image':'url(https://image.tmdb.org/t/p/w500{{ movie.poster }})'}">
 				<div class="poster-overlay"></div>
 				<a href="/detail/{{ movie.movieID }}">	
