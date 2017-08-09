@@ -4,18 +4,31 @@
 	<strong>{{ movie.title }}</strong> has been added to your watchlist! Check it out in your <a href="/dashboard">Dashboard</a>.
 </div>
 <div class="detail-page">
-	
-
 	<div class="container full-width square-corners">
 		<div class="row movie-banner">
-			<div class="background-image">
+			<div class="background-image hidden-xs">
 				<img class="backdrop" ng-src="https://image.tmdb.org/t/p/original{{ movie.backdrop_path }}" style="max-width: 100%">
 			</div>
 			<div class="row movie-banner-pad"></div>
-			<div class="col-md-4 movie-poster" align="center">
+			<!-- responsive section for small screens -->
+			<div class="compact-movie-info hidden-md hidden-lg hidden-xl">
+				<div class="left">
+					<img ng-src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}" alt="" height="450">
+				</div>
+				<div class="right">
+					<h2>{{ movie.title }}</h2>
+					<p class="release-year">{{ movie.release_date | date : "longDate" }}</p>
+					<h3>Overview</h3>
+					<p class="movie-overview">{{ movie.overview }}</p>
+					<h3>Director</h3>
+					<h5 ng-repeat="person in castCrew.crew | filter: { job : 'Director' } : true ">{{ person.name }}</h5>
+				</div>
+			</div>
+			<!-- responsive section for large screens -->
+			<div class="col-md-4 movie-poster hidden-sm hidden-xs" align="center">
 				<img class="rounded-borders" ng-src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}" alt="" height="450">
 			</div>
-			<div class="col-md-8">
+			<div class="col-md-8 hidden-sm hidden-xs">
 				<div class="row">
 					<div>
 						<div class="col-lg-12">
@@ -57,6 +70,25 @@
 					</div>
 				</div>
 			</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		</div>
 		<div class="row">
 			<div class="col-xs-12 more-info"><h3 align="center">MORE INFO</h3></div>

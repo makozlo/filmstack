@@ -462,6 +462,37 @@ footer img {
   height: 575px;
 }
 
+
+.compact-movie-info {
+  position: relative;
+  height: 575px;
+  width: 100%;
+  color: white;
+}
+
+.compact-movie-info .left {
+  padding: 10px;
+  position: absolute;
+  width: 50%;
+  left: 0;
+}
+
+.compact-movie-info .right {
+  padding: 10px;
+  position: absolute;
+  width: 50%;
+  right: 0;
+}
+
+.compact-movie-info img {
+  display: block; 
+  /*position: absolute;*/
+  /*height: 85%;*/
+  border-radius: 4px;
+  margin: auto;
+}
+
+
 #watchlist-dropdown {
   background-color: #fc7e0f;
   border-color: #fc7e0f;
