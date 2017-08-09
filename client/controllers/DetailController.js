@@ -10,6 +10,8 @@ app.controller('DetailController', ['$scope', '$http', 'DetailFactory', 'CastCre
 		}
 	});
 
+	$scope.showAlert = false;
+
 	function getMovieID() {
 		array = location.pathname.split('/');
 		var movieID = array[array.length - 1];
@@ -69,7 +71,7 @@ app.controller('DetailController', ['$scope', '$http', 'DetailFactory', 'CastCre
 			console.log(err);
 		});
 
-		console.log(movie);
+		$scope.showAlert = true;
 	};
 
 	$scope.logOut = function(){
