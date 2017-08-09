@@ -4,6 +4,15 @@ app.controller('DashboardController', ['$scope', '$http', 'DashboardFactory', 'L
 
 	UserService.me().then(function(user){
 		$scope.user = user;
+
+		if($scope.user) {
+			$scope.loggedIn = true;
+		} else {
+			$scope.loggedIn = false;
+		}
+
+		console.log($scope.loggedIn);
+
 		$scope.windowLoaded = false;
 		var dashInfo = new DashboardFactory({id: $scope.user.id});
 		dashInfo.$get(function(data) {

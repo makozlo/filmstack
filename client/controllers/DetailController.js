@@ -1,5 +1,15 @@
-app.controller('DetailController', ['$scope', '$http', 'DetailFactory', 'CastCrewFactory', 'ListFactory','UserService','SearchFactory', 'SearchCacheService', '$location', function ($scope, $http, DetailFactory, CastCrewFactory, ListFactory, UserService, SearchFactory, SearchCacheService, $location) {
+app.controller('DetailController', ['$scope', '$http', 'DetailFactory', 'CastCrewFactory', 'ListFactory', 'UserFactory', 'UserService','SearchFactory', 'SearchCacheService', '$location', function ($scope, $http, DetailFactory, CastCrewFactory, ListFactory, UserFactory, UserService, SearchFactory, SearchCacheService, $location) {
 	
+	UserService.me().then(function(user){
+		$scope.user = user;
+
+		if($scope.user) {
+			$scope.loggedIn = true;
+		} else {
+			$scope.loggedIn = false;
+		}
+	});
+
 	function getMovieID() {
 		array = location.pathname.split('/');
 		var movieID = array[array.length - 1];
@@ -64,7 +74,7 @@ app.controller('DetailController', ['$scope', '$http', 'DetailFactory', 'CastCre
 
 	$scope.logOut = function(){
            UserFactory.get({id: 'logout'}, function() {
-                window.location.replace('http://localhost:3000');
-           })
-        }
+                window.location.replace('/');
+           });
+        };
 }]);

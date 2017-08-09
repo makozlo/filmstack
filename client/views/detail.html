@@ -38,7 +38,7 @@
 				</div>
 				<div class="row">
 					<div class="col-xs-3">
-						<div class="btn-group">
+						<div class="btn-group" ng-show="loggedIn">
 		  					<button type="button" class="btn btn-primary" id="watchlist-dropdown" ng-click="addToList(movie.id, movie.title, movie.poster_path, lists[0].id, user.id)">Add to Watchlist</button>
 		  					<button type="button" class="btn btn-primary dropdown-toggle" id="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		   						<span class="caret"></span>

@@ -10,8 +10,8 @@
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav navbar-right">
-				<li><a class="nav-item hover-white" href="/dashboard">DASHBOARD</a></li>
-				<li><a class="nav-item hover-white" href="" ng-click='logOut()'>LOGOUT</a></li>
+				<li ng-show="loggedIn"><a class="nav-item hover-white" href="/dashboard">DASHBOARD</a></li>
+				<li ng-show="loggedIn"><a class="nav-item hover-white" href="" ng-click='logOut()'>LOGOUT</a></li>
 			</ul>
 			<!-- <div class="search navbar-right">
 				<input type="text" class="form-control input-sm" id="navbar-search-input" maxlength="64" placeholder="Search" ng-model="query">
