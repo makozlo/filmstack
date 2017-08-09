@@ -14,7 +14,7 @@ app.controller('DashboardController', ['$scope', '$http', 'DashboardFactory', 'L
 		}).then(function() {
 			console.log('window has loaded');
 			$scope.windowLoaded = true;
-		})
+		});
 	});
 	
 	$scope.search = function () {
