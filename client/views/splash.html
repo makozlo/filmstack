@@ -50,24 +50,24 @@
 		</div>
 	</div>
 	<div class="row">
-			<div class="login-container col-xs-2 col-xs-push-4 center">
-				<!-- Trigger the modal with a button -->
-				<!-- <button type="button" class="glyphicon glyphicon-user" data-toggle="modal" data-target="#loginModal">Log-in</button> -->
-				<button class="login-btn center" data-toggle="modal" data-target="#loginModal">Login</button>
+			<div class="login-container col-xs-6 center">
+				<div class="button-box">
+					<button class="login-btn center" data-toggle="modal" data-target="#loginModal">Login</button>
+				</div>
 			</div>
-			<div class="login-container col-xs-2 col-xs-push-4">
-				<!-- <button type="button" class="glyphicon glyphicon-user" data-toggle="modal" data-target="#signupModel">Sign-Up</button> -->
-				<button class="login-btn center" data-toggle="modal" data-target="#signupModel">Sign Up</button>
+			<div class="login-container col-xs-6">
+				<div class="button-box">
+					<button class="signup-btn center" data-toggle="modal" data-target="#signupModel">Sign Up</button>
+				</div>
 			</div>
 		</div>
 
-	<div class="row" ng-repeat="result in results">
+	<!-- <div class="row" ng-repeat="result in results">
 		<div class="result-box col-md-10 col-md-push-1">
-			<!-- <img class="inline" ng-src="" src="" alt="" height="275"> -->
 			<h3 class="inline">{{ result.title }}</h3>
 			<h5 class="inline">{{ result.overview }}</h5>
 		</div>
-	</div>
+	</div> -->
 	<!-- new login modal -->
 	<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
 		<div class="modal-dialog">
