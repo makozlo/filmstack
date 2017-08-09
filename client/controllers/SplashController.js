@@ -10,6 +10,12 @@ app.controller('SplashController', ['$scope', '$resource', '$http', 'SearchFacto
 		}
 	});
 
+	if(UserService.isLoggedIn() === true) {
+		$scope.loggedIn = true;
+	} else {
+		$scope.loggedIn = false;
+	}
+
 
 	$scope.search = function () {
 		$scope.results = {};
