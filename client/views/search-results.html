@@ -1,12 +1,12 @@
 <navbar></navbar>
 <div class="container search-results">
 	<div class="row">
-		<div class="bottom-margin-md col-xs-3 col-xs-push-5 centered">
-			<h1 class="center">Search Results</h1>
+		<div class="bottom-margin-md col-xs-12">
+			<h1 class="text-center">Search Results</h1>
 		</div>
 	</div>
 	<div class="row no-margin no-padding" ng-repeat="result in results">
-		<div class="result-box shadow-box col-md-10 col-md-push-1">
+		<div class="result-box shadow-box col-md-10 col-md-push-1 hidden-sm hidden-xs">
 			<div class="col-lg-3 no-padding">
 				<img class="inline img-responsive" ng-src="https://image.tmdb.org/t/p/w500{{ result.poster_path }}" src="" height="350">
 			</div>

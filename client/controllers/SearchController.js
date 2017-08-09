@@ -1,18 +1,15 @@
 app.controller('SearchController', ['$scope', '$http', '$location', 'SearchFactory', 'SearchCacheService', 'UserService', function ($scope, $http, $location, SearchFactory, SearchCacheService, UserService) {
 	
+
 	$scope.results = SearchCacheService.getResults();
 
-	UserService.me().then(function(user){
-		$scope.user = user;
 
-		if($scope.user) {
-			$scope.loggedIn = true;
-		} else {
-			$scope.loggedIn = false;
-		}
-	});
 
-	
+	if (UserService.isLoggedIn() === true) {
+		$scope.loggedIn = true;
+	} else {
+		$scope.loggedIn = false;
+	}
 
 	$scope.goToMovie = function(id) {
 		var path = '/detail/' + id;
