@@ -72,6 +72,17 @@ app.controller('SplashController', ['$scope', '$resource', '$http', 'SearchFacto
 		}
 		$location.path(dest).search('p', null).replace();
 	}
+
+	$(function() {
+		$(window).on('resize', function() {
+			var staticHeight = 50 + 75 + 150;
+			$('#wrapper .container-fluid').css({
+				'min-height': $('#wrapper').height() - staticHeight
+			});
+		});
+
+		$(window).trigger('resize');
+	});
 }]);
 
 
