@@ -26,22 +26,23 @@ body {
 	background-color: #f4f4f4 !important;
   position: relative;
   margin: 0;
-  padding-bottom: 150px;
   min-height: 100%;
 }
 
 #wrapper {
   margin: 0 auto;
+  position: relative;
+  height: 100vh;
 }
 
 #std-footer {
   background-color: #34343c;
   width: 100%;
   height: 150px;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  /*position: absolute;*/
+  /*right: 0;*/
+  /*bottom: 0;*/
+  /*left: 0;*/
   /*margin: 0 auto;*/
 }
 

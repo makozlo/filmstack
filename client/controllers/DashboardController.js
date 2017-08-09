@@ -2,27 +2,27 @@ app.controller('DashboardController', ['$scope', '$http', 'DashboardFactory', 'L
 	//remove below to test for protected routes
 	// UserService.requireLogin();
 
-	UserService.me().then(function(user){
-		$scope.user = user;
+		UserService.me().then(function(user){
+			$scope.user = user;
 
-		if($scope.user) {
-			$scope.loggedIn = true;
-		} else {
-			$scope.loggedIn = false;
-		}
+			if($scope.user) {
+				$scope.loggedIn = true;
+			} else {
+				$scope.loggedIn = false;
+			}
 
-		$scope.windowLoaded = false;
-		var dashInfo = new DashboardFactory({id: $scope.user.id});
-		dashInfo.$get(function(data) {
-			$scope.otherLists = data.otherLists;
-			$scope.mainList = data.mainList;
-			$scope.currentListID = $scope.otherLists[0].id;
-			// console.log($scope.mainList);
-		}).then(function() {
-			console.log('window has loaded');
-			$scope.windowLoaded = true;
+			$scope.windowLoaded = false;
+			var dashInfo = new DashboardFactory({id: $scope.user.id});
+			dashInfo.$get(function(data) {
+				$scope.otherLists = data.otherLists;
+				$scope.mainList = data.mainList;
+				$scope.currentListID = $scope.otherLists[0].id;
+				// console.log($scope.mainList);
+			}).then(function() {
+				console.log('window has loaded');
+				$scope.windowLoaded = true;
+			});
 		});
-	});
 	
 	$scope.search = function () {
 		$scope.results = {};
@@ -87,4 +87,15 @@ app.controller('DashboardController', ['$scope', '$http', 'DashboardFactory', 'L
 			location.reload();
 		});
 	};
+
+	$(function() {
+		$(window).on('resize', function() {
+			var staticHeight = 50 + 75 + 150;
+			$('#wrapper .container-fluid').css({
+				'min-height': $('#wrapper').height() - staticHeight
+			});
+		});
+
+		$(window).trigger('resize');
+	});
 }]);
