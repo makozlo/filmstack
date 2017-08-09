@@ -107,6 +107,11 @@ body .navbar {
 footer img {
   margin-bottom: 5px;
 }
+.splash-dashboard-link {
+  color: white !important;
+  float: right;
+  margin: 0;
+}
 
 .jumbotron {
 	height: 500px;

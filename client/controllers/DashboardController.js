@@ -11,8 +11,6 @@ app.controller('DashboardController', ['$scope', '$http', 'DashboardFactory', 'L
 			$scope.loggedIn = false;
 		}
 
-		console.log($scope.loggedIn);
-
 		$scope.windowLoaded = false;
 		var dashInfo = new DashboardFactory({id: $scope.user.id});
 		dashInfo.$get(function(data) {

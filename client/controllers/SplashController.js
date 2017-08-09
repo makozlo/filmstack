@@ -1,5 +1,15 @@
 app.controller('SplashController', ['$scope', '$resource', '$http', 'SearchFactory', 'SearchCacheService', '$location', 'UserService', 'UserFactory', 'CastCrewFactory', '$routeParams', function ($scope, $resource, $http, SearchFactory, SearchCacheService, $location, UserService, UserFactory, CastCrewFactory, $routeParams) {
 
+	UserService.me().then(function(user){
+		$scope.user = user;
+
+		if($scope.user) {
+			$scope.loggedIn = true;
+		} else {
+			$scope.loggedIn = false;
+		}
+	});
+
 
 	$scope.search = function () {
 		$scope.results = {};
